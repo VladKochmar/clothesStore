@@ -43,7 +43,7 @@ const hasLabel = computed(() => props.productData.label)
 
 <style lang="scss" scoped>
 .product-card {
-  max-width: 24.375rem;
+  // max-width: 24.375rem;
   // .product-card__header
   &__header {
     position: relative;
