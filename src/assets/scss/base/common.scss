@@ -1,0 +1,7 @@
+.title {
+  font-size: 2.25rem;
+  line-height: 144.444444%;
+  @media (width <= 768px) {
+    font-size: 1.375rem;
+  }
+}
