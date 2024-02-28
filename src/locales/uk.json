@@ -6,7 +6,8 @@
   },
   "pages": {
     "home": {
-      "our-products": "Купуйте нашу продукцію"
+      "our-products": "Купуйте нашу продукцію",
+      "trending-products": "Купуйте наші <strong>трендові</strong> товари"
     }
   }
 }

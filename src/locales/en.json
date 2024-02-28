@@ -6,7 +6,8 @@
   },
   "pages": {
     "home": {
-      "our-products": "Shop Our Products"
+      "our-products": "Shop Our Products",
+      "trending-products": "Shop Our <strong>Trending</strong> Products"
     }
   }
 }
