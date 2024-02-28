@@ -1,5 +1,6 @@
 <script setup>
 import ProductsTabs from '@/components/ProductsTabs.vue'
+import ImagesSection from '@/components/ImagesSection.vue'
 import ProductsSlider from '@/components/ProductsSlider.vue'
 import MainMasterPage from '@/masterpages/MainMasterPage.vue'
 
@@ -26,12 +27,25 @@ onMounted(() => {
           <products-tabs :products-list="trendingProducts" />
         </div>
       </section>
+      <images-section />
       <section class="our-products">
         <div class="our-products__container">
           <h2 class="title mb-6 mb-lg-9">{{ $t('pages.home.our-products') }}</h2>
           <products-slider :products-list="catalogStore.getItemsList" />
         </div>
       </section>
+      <v-parallax
+        src="https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        class="cant-find"
+      >
+        <div class="d-flex flex-column fill-height justify-center align-center">
+          <h2
+            class="title text-white text-center mb-7 mb-md-11"
+            v-html="$t('pages.home.cant-find')"
+          ></h2>
+          <router-link :to="{ name: 'home' }" class="button">{{ $t('buttons.cart') }}</router-link>
+        </div>
+      </v-parallax>
     </div>
   </main-master-page>
 </template>

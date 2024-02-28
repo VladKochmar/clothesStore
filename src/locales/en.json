@@ -4,10 +4,28 @@
     "sale": "Sale",
     "collections": "Collections"
   },
+  "buttons": {
+    "cart": "Add to cart"
+  },
   "pages": {
     "home": {
       "our-products": "Shop Our Products",
-      "trending-products": "Shop Our <strong>Trending</strong> Products"
+      "trending-products": "Shop Our <strong>Trending</strong> Products",
+      "images-container": {
+        "shirts": {
+          "title": "Must Have<br />Stylish<br /><strong>Shirt</strong>",
+          "link": "Shop shirts"
+        },
+        "t-shirts": {
+          "title": "Your Perfect<br />Summer<br /><strong>T-shirt</strong>",
+          "link": "Shop t-shirts"
+        },
+        "sweatshirts": {
+          "title": "Your Perfect<br />Winter<br /><strong>sweatshirt</strong>",
+          "link": "Shop sweatshirts"
+        }
+      },
+      "cant-find": "80% of people <storng>can't find</storng> their favorite T-shirt, can you?"
     }
   }
 }

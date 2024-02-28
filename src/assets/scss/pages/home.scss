@@ -1,0 +1,11 @@
+.cant-find {
+  .title {
+    max-width: 51.875rem;
+  }
+  & > .v-responsive__sizer {
+    padding-bottom: 50% !important;
+    @media (width < 768px) {
+      padding-bottom: 100% !important;
+    }
+  }
+}

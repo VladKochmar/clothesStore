@@ -4,10 +4,28 @@
     "sale": "Розпродаж",
     "collections": "Колекції"
   },
+  "buttons": {
+    "cart": "Додати в кошик"
+  },
   "pages": {
     "home": {
       "our-products": "Купуйте нашу продукцію",
-      "trending-products": "Купуйте наші <strong>трендові</strong> товари"
+      "trending-products": "Купуйте наші <strong>трендові</strong> товари",
+      "images-container": {
+        "shirts": {
+          "title": "Must Have<br>стильна<br><strong>сорочка</strong>",
+          "link": "Купити сорочки"
+        },
+        "t-shirts": {
+          "title": "Твоя ідеальна<br />літня<br /><strong>футболка</strong>",
+          "link": "Купити футболки"
+        },
+        "sweatshirts": {
+          "title": "Твій ідеальний<br />зимовий<br /><strong>світшо</strong>",
+          "link": "Купити світшоти"
+        }
+      },
+      "cant-find": "80% людей <strong>не можуть знайти</storng> олюблену футболку, а ви?"
     }
   }
 }
