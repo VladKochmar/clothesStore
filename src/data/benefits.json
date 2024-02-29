@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": {
+      "en": "Complimentary Gift Wrapping",
+      "uk": "Безкоштовна подарункова упаковка"
+    },
+    "text": {
+      "en": "Free Luxury Gift Wrap on orders over €100",
+      "uk": "Безкоштовна розкішна подарункова упаковка на замовлення понад 100€"
+    },
+    "icon": "fa-solid fa-gift"
+  },
+  {
+    "id": 2,
+    "title": {
+      "en": "PAY LATER WITH KLARNA",
+      "uk": "СПЛАЧУЙТЕ ПІЗНІШЕ ЗА ДОПОМОГОЮ KLARNA"
+    },
+    "text": {
+      "en": "No interest. No Fees. No credit agreement.",
+      "uk": "Без відсотків. Без комісій. Без кредитної угоди."
+    },
+    "icon": "fa-solid fa-gift"
+  },
+  {
+    "id": 3,
+    "title": {
+      "en": "WORLDWIDE SHIPPING",
+      "uk": "ДОСТАВКА ПО ВСЬОМУ СВІТУ"
+    },
+    "text": {
+      "en": "International courier shipping",
+      "uk": "Міжнародна кур'єрська доставка"
+    },
+    "icon": "fa-solid fa-globe"
+  }
+]

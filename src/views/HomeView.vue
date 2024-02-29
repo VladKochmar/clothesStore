@@ -7,6 +7,7 @@ import MainMasterPage from '@/masterpages/MainMasterPage.vue'
 import { onMounted, computed } from 'vue'
 
 import { useCatalogStore } from '@/stores/catalog'
+import BenefitsSection from '@/components/BenefitsSection.vue'
 const catalogStore = useCatalogStore()
 
 const trendingProducts = computed(() =>
@@ -46,6 +47,7 @@ onMounted(() => {
           <router-link :to="{ name: 'home' }" class="button">{{ $t('buttons.cart') }}</router-link>
         </div>
       </v-parallax>
+      <benefits-section />
     </div>
   </main-master-page>
 </template>
