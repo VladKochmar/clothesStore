@@ -1,12 +1,12 @@
 <template>
   <div class="benefits">
     <div class="benefits__container">
-      <ul class="d-md-flex justify-md-space-between">
+      <ul class="d-md-flex justify-md-space-between ga-6">
         <li v-for="benefit in benefits" :key="benefit.id" class="d-flex ga-6 ga-lg-10 mb-6 mb-md-0">
           <v-icon :icon="benefit.icon"></v-icon>
           <div>
-            <strong class="mb-2">{{ benefit.title.en }}</strong>
-            <p class="text">{{ benefit.text.en }}</p>
+            <strong class="mb-2">{{ benefit.title[$i18n.locale] }}</strong>
+            <p class="text">{{ benefit.text[$i18n.locale] }}</p>
           </div>
         </li>
       </ul>
