@@ -1,13 +1,15 @@
 <script setup>
+import MainMasterPage from '@/masterpages/MainMasterPage.vue'
 import ProductsTabs from '@/components/ProductsTabs.vue'
 import ImagesSection from '@/components/ImagesSection.vue'
 import ProductsSlider from '@/components/ProductsSlider.vue'
-import MainMasterPage from '@/masterpages/MainMasterPage.vue'
+import BenefitsSection from '@/components/BenefitsSection.vue'
+import ComfortableSection from '@/components/ComfortableSection.vue'
+import GoodAtYouSection from '@/components/GoodAtYouSection.vue'
 
 import { onMounted, computed } from 'vue'
 
 import { useCatalogStore } from '@/stores/catalog'
-import BenefitsSection from '@/components/BenefitsSection.vue'
 const catalogStore = useCatalogStore()
 
 const trendingProducts = computed(() =>
@@ -17,6 +19,9 @@ const trendingProducts = computed(() =>
 onMounted(() => {
   catalogStore.loadItemsList()
 })
+
+import images from '@/data/images.json'
+import good from '@/data/good.json'
 </script>
 
 <template>
@@ -48,11 +53,13 @@ onMounted(() => {
         </div>
       </v-parallax>
       <benefits-section />
+      <comfortable-section :slides="images" />
+      <good-at-you-section :slides="good" />
     </div>
   </main-master-page>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .trending-products {
   padding: 2.5rem 0 5.625rem;
   .title {

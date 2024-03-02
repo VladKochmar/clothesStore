@@ -25,7 +25,9 @@
           "link": "Shop sweatshirts"
         }
       },
-      "cant-find": "80% of people <storng>can't find</storng> their favorite T-shirt, can you?"
+      "cant-find": "80% of people <storng>can't find</storng> their favorite T-shirt, can you?",
+      "comfortable": "We make things comfortable",
+      "good-at-you": "T-shirt looks <strong>good</strong> at you"
     }
   }
 }
