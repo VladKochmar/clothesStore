@@ -7,6 +7,15 @@
   }
 }
 
+.main-title {
+  font-size: 3rem;
+  line-height: 133.333333%;
+  text-transform: uppercase;
+  @media (width < 992px) {
+    font-size: 1.625rem;
+  }
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -17,6 +26,16 @@
   font-size: 0.75rem;
   line-height: 1.5;
   transition: background 0.3s ease 0s;
+  // .button_black
+  &_black {
+    color: $white;
+    background-color: $black;
+  }
+  // .button_border
+  &_border {
+    border: 1px solid $black;
+    background-color: transparent;
+  }
   @media (any-hover: hover) {
     &:hover {
       background-color: $grey;

@@ -5,10 +5,25 @@
     "collections": "Collections"
   },
   "buttons": {
-    "cart": "Add to cart"
+    "cart": "Add to cart",
+    "fitting": "Fitting Room"
   },
   "pages": {
     "home": {
+      "main-section": {
+        "slide-one": {
+          "title": "Our new <strong>winter</strong> 2024 Collection",
+          "text": "Free Luxury Gift Wrap on orders over €100"
+        },
+        "slide-two": {
+          "title": "Our new <strong>summer</strong> 2024 Collection",
+          "text": "Free Luxury Gift Wrap on orders over €200"
+        },
+        "slide-three": {
+          "title": "Our new <strong>spring</strong> 2024 Collection",
+          "text": "Free Luxury Gift Wrap on orders over €150"
+        }
+      },
       "our-products": "Shop Our Products",
       "trending-products": "Shop Our <strong>Trending</strong> Products",
       "images-container": {

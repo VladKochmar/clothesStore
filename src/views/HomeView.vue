@@ -1,5 +1,6 @@
 <script setup>
 import MainMasterPage from '@/masterpages/MainMasterPage.vue'
+import MainSectionSlider from '@/components/MainSectionSlider.vue'
 import ProductsTabs from '@/components/ProductsTabs.vue'
 import ImagesSection from '@/components/ImagesSection.vue'
 import ProductsSlider from '@/components/ProductsSlider.vue'
@@ -27,6 +28,7 @@ import good from '@/data/good.json'
 <template>
   <main-master-page>
     <div class="home">
+      <main-section-slider />
       <section class="trending-products">
         <div class="trending-products__container">
           <h2 class="title text-center mb-6" v-html="$t('pages.home.trending-products')"></h2>
