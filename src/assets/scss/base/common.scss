@@ -42,3 +42,52 @@
     }
   }
 }
+
+.rounded-button {
+  color: #111113;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50%;
+  border: 1.4px solid #e5e5e5;
+}
+
+.v-breadcrumbs-item,
+.v-breadcrumbs-divider {
+  font-size: 0.75rem;
+  color: #b3b3b3 !important;
+}
+
+.v-breadcrumbs-item.v-breadcrumbs-item--disabled {
+  opacity: 1;
+  color: #111113 !important;
+}
+
+.activator-btn {
+  font-size: 0.75rem;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0 0.75rem;
+  text-decoration: none;
+  &::selection {
+    background-color: transparent;
+    color: inherit;
+  }
+  &[aria-expanded='true'] {
+    i {
+      transform: rotateX(180deg);
+    }
+  }
+  cursor: pointer;
+  i {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease 0s;
+  }
+}
+
+.fz-small {
+  &::before {
+    font-size: 0.75rem;
+  }
+}

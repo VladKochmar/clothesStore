@@ -43,6 +43,20 @@
       "cant-find": "80% of people <storng>can't find</storng> their favorite T-shirt, can you?",
       "comfortable": "We make things comfortable",
       "good-at-you": "T-shirt looks <strong>good</strong> at you"
+    },
+    "catalog": {
+      "shirts": {
+        "title": "Shirts",
+        "text": "You will always be in fashion with our large selection of shirts."
+      },
+      "t-shirts": {
+        "title": "T-shirts",
+        "text": "You will always be in fashion with our large selection of t-shirts."
+      },
+      "sweatshirts": {
+        "title": "Sweatshirts",
+        "text": "You will always be in fashion with our large selection of sweatshirts."
+      }
     }
   }
 }

@@ -20,7 +20,14 @@
               {{ $t('pages.home.main-section.slide-one.text') }}
             </p>
             <div class="d-inline-flex flex-column flex-sm-row ga-2 ga-md-3">
-              <router-link :to="{ name: 'home' }" class="button button_black">
+              <router-link
+                :to="{
+                  name: 'catalog',
+                  params: { clothingType: 'shirts' },
+                  query: { color: 'black', size: 'XS', price: '100-300' }
+                }"
+                class="button button_black"
+              >
                 {{ $t('buttons.cart') }}
               </router-link>
               <router-link :to="{ name: 'home' }" class="button button_border">

@@ -8,6 +8,12 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView
+    },
+    {
+      path: '/:clothingType',
+      name: 'catalog',
+      component: () => import('@/views/CatalogView.vue'),
+      props: true
     }
   ]
 })
