@@ -4,5 +4,8 @@
   { "id": 3, "title": "blue" },
   { "id": 4, "title": "green" },
   { "id": 5, "title": "gray" },
-  { "id": 6, "title": "red" }
+  { "id": 6, "title": "red" },
+  { "id": 7, "title": "pink" },
+  { "id": 8, "title": "orange" },
+  { "id": 9, "title": "brown" }
 ]

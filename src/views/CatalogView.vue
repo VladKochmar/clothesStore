@@ -8,6 +8,10 @@
           <p class="text">{{ $t(`pages.catalog.${clothingType}.text`) }}</p>
         </div>
         <catalog-filter />
+        <catalog-body />
+        <button @click="onLoadMore" class="button button_black d-flex mx-auto w-100 mw-390">
+          {{ $t('buttons.more') }}
+        </button>
       </div>
     </div>
   </main-master-page>
@@ -18,12 +22,7 @@ import { onMounted } from 'vue'
 
 import MainMasterPage from '@/masterpages/MainMasterPage.vue'
 import CatalogFilter from '@/components/CatalogComponents/filter/CatalogFilter.vue'
-
-const breadcrumps = [
-  { title: 'Home', disabled: false, href: '/' },
-  { title: 'Catalog', disabled: false, href: '/' },
-  { title: 'Shirts', disabled: true }
-]
+import CatalogBody from '@/components/CatalogComponents/catalog/CatalogBody.vue'
 
 const props = defineProps({
   clothingType: {
@@ -34,10 +33,23 @@ const props = defineProps({
 
 import { useCatalogStore } from '@/stores/catalog'
 const catalogStore = useCatalogStore()
+const { loadFilteredData, loadFilteredDataAfter, loadFilteredList } = catalogStore
 
 onMounted(async () => {
-  await catalogStore.loadFilteredData('type', '==', props.clothingType)
+  await loadFilteredData('type', '==', props.clothingType)
+  loadFilteredList()
 })
+
+async function onLoadMore() {
+  await loadFilteredDataAfter('type', '==', props.clothingType)
+  loadFilteredList()
+}
+
+const breadcrumps = [
+  { title: 'Home', disabled: false, href: '/' },
+  { title: 'Catalog', disabled: false, href: '/' },
+  { title: props.clothingType, disabled: true }
+]
 </script>
 
 <style lang="scss" scoped>
@@ -45,5 +57,8 @@ onMounted(async () => {
   color: #666;
   font-size: 0.875rem;
   max-width: 25rem;
+}
+.mw-390 {
+  max-width: 24.375rem;
 }
 </style>

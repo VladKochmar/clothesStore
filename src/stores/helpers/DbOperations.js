@@ -12,12 +12,15 @@ import {
   setDoc,
   query,
   where,
-  documentId
+  documentId,
+  startAfter,
+  limit
 } from 'firebase/firestore/lite'
 
 class DbOperations {
   constructor(collectionTitle) {
     this.dbCollection = collection(firebaseDB, `/${collectionTitle}`)
+    this.lastDoc = null
   }
   getListFromSnapshot(snapshot) {
     const list = []
@@ -27,11 +30,14 @@ class DbOperations {
         ...doc.data()
       })
     })
+    this.lastDoc = snapshot.docs[snapshot.docs.length - 1]
     return list
   }
+
   loadItemsList() {
+    const q = query(this.dbCollection)
     return new Promise((resolve, reject) => {
-      getDocs(this.dbCollection)
+      getDocs(q)
         .then((querySnapshot) => {
           resolve(this.getListFromSnapshot(querySnapshot))
         })
@@ -141,7 +147,24 @@ class DbOperations {
     })
   }
   loadFilteredData(fieldTitle, compareOperator, valueToCompare) {
-    const q = query(this.dbCollection, where(fieldTitle, compareOperator, valueToCompare))
+    const q = query(this.dbCollection, where(fieldTitle, compareOperator, valueToCompare), limit(6))
+    return new Promise((resolve, reject) => {
+      getDocs(q)
+        .then((querySnapshot) => {
+          resolve(this.getListFromSnapshot(querySnapshot))
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  }
+  loadFilteredDataAfter(fieldTitle, compareOperator, valueToCompare) {
+    const q = query(
+      this.dbCollection,
+      where(fieldTitle, compareOperator, valueToCompare),
+      startAfter(this.lastDoc),
+      limit(9)
+    )
     return new Promise((resolve, reject) => {
       getDocs(q)
         .then((querySnapshot) => {

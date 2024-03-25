@@ -19,7 +19,7 @@
           @update="updateFilter('price', $event)"
         />
       </div>
-      <sort-select :sort-type="filterData.sortType" @update="updateFilter('sortType', $event)" />
+      <sort-select />
     </div>
     <div class="d-flex align-center justify-space-between ga-8 py-4">
       <div class="d-inline-flex align-center ga-2">
@@ -52,7 +52,14 @@ import PriceFilterMenu from './components/PriceFilterMenu.vue'
 import SortSelect from './components/SortSelect.vue'
 import FilterTag from './components/FilterTag.vue'
 
-import { reactive, watch } from 'vue'
+import colors from '@/data/colors.json'
+import sizes from '@/data/sizes.json'
+
+import { reactive, watch, onMounted } from 'vue'
+
+import { useCatalogStore } from '@/stores/catalog'
+const catalogStore = useCatalogStore()
+const { setFilter, loadFilteredList } = catalogStore
 
 import { useRoute, useRouter } from 'vue-router'
 const route = useRoute()
@@ -61,29 +68,27 @@ const router = useRouter()
 const filterData = reactive({
   color: route.query.color,
   size: route.query.size,
-  price: route.query.price,
-  sortType: route.query.sort || 'auto'
+  price: route.query.price
 })
 
-watch(
-  filterData,
-  () => {
-    router.push({
-      name: 'catalog',
-      params: { clothingType: route.params.clothingType },
-      query: {
-        color: filterData.color,
-        size: filterData.size,
-        price: filterData.price,
-        sortType: filterData.sortType
-      }
-    })
-  },
-  { deep: true }
-)
+watch(filterData, () => {
+  router.push({
+    name: 'catalog',
+    params: { clothingType: route.params.clothingType },
+    query: {
+      color: filterData.color,
+      size: filterData.size,
+      price: filterData.price
+    }
+  })
+  setFilter(filterData)
+  loadFilteredList()
+})
 
-import colors from '@/data/colors.json'
-import sizes from '@/data/sizes.json'
+onMounted(() => {
+  setFilter(filterData)
+  loadFilteredList()
+})
 
 function updateFilter(prop, newValue) {
   filterData[prop] = newValue

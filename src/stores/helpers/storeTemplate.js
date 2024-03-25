@@ -28,6 +28,20 @@ export default function getStoreTemplate(collectionTitle, generalApiOperation) {
     return itemsList.value
   }
 
+  async function loadFilteredDataAfter(fieldTitle, compareOperator, valueToCompare) {
+    const receivedResult = await generalApiOperation({
+      operation: () =>
+        collectionDB.loadFilteredDataAfter(fieldTitle, compareOperator, valueToCompare)
+    })
+
+    if (receivedResult)
+      for (const product of receivedResult) {
+        itemsList.value.push(product)
+      }
+
+    return itemsList.value
+  }
+
   async function loadDocumentsFromIdsList(idsList) {
     itemsList.value = await generalApiOperation({
       operation: () => collectionDB.loadDocumentsFromIdsList(idsList)
@@ -87,6 +101,7 @@ export default function getStoreTemplate(collectionTitle, generalApiOperation) {
     loadItemById,
     loadFilteredData,
     getCurrentItem,
-    loadDocumentsFromIdsList
+    loadDocumentsFromIdsList,
+    loadFilteredDataAfter
   }
 }

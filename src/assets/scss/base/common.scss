@@ -1,19 +1,26 @@
 .title {
   font-size: 2.25rem;
-  line-height: 144.444444%;
-  text-transform: uppercase;
   @media (width <= 768px) {
     font-size: 1.375rem;
   }
 }
-
+.title-s {
+  font-size: 1.75rem;
+  @media (width <= 768px) {
+    font-size: 1.125rem;
+  }
+}
 .main-title {
   font-size: 3rem;
-  line-height: 133.333333%;
-  text-transform: uppercase;
   @media (width < 992px) {
     font-size: 1.625rem;
   }
+}
+.title,
+.title-s,
+.main-title {
+  line-height: 133.333333%;
+  text-transform: uppercase;
 }
 
 .button {
@@ -90,4 +97,12 @@
   &::before {
     font-size: 0.75rem;
   }
+}
+
+.mw-100 {
+  max-width: 100%;
+}
+
+.v-breadcrumbs-item--disabled {
+  text-transform: capitalize;
 }

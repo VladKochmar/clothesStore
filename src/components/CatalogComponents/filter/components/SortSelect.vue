@@ -1,8 +1,8 @@
 <template>
   <div class="sort d-inline-flex ga-4">
     sort
-    <select v-model="currentSortType" @change="$emit('update', currentSortType)" class="select">
-      <option value="auto" selected>auto</option>
+    <select v-model="currentSortType" class="select" @change="changeSortType(currentSortType)">
+      <option value="auto">auto</option>
       <option value="low">low to high</option>
       <option value="high">high to low</option>
     </select>
@@ -12,14 +12,11 @@
 <script setup>
 import { ref } from 'vue'
 
-const props = defineProps({
-  sortType: {
-    type: String,
-    required: true
-  }
-})
+const currentSortType = ref('auto')
 
-const currentSortType = ref(props.sortType)
+import { useCatalogStore } from '@/stores/catalog'
+const catalogStore = useCatalogStore()
+const { changeSortType } = catalogStore
 </script>
 
 <style lang="scss" scoped>

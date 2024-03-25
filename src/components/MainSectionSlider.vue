@@ -23,8 +23,8 @@
               <router-link
                 :to="{
                   name: 'catalog',
-                  params: { clothingType: 'shirts' },
-                  query: { color: 'black', size: 'XS', price: '100-300' }
+                  params: { clothingType: 'sweatshirts' },
+                  query: { color: 'black', price: '30-100' }
                 }"
                 class="button button_black"
               >
