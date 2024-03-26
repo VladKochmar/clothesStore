@@ -1,5 +1,5 @@
 <template>
-  <div class="py-8">
+  <div class="pt-8 pb-13">
     <products-list v-if="getFilteredList?.length" :products="getFilteredList" />
     <empty-list v-else />
   </div>

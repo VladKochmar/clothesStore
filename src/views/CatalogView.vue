@@ -1,6 +1,6 @@
 <template>
   <main-master-page>
-    <div class="catalog">
+    <div class="catalog pb-8">
       <div class="catalog__container">
         <v-breadcrumbs :items="breadcrumps" />
         <div class="d-flex align-center flex-column py-4 text-center">

@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="d-flex align-center justify-space-between ga-8 py-7 border-bottom">
-      <div class="d-inline-flex align-center ga-8">
+      <button @click="onMenuClick" class="activator-btn filters-btn" :class="{ active: isOpened }">
+        Filters <v-icon icon="fa-solid fa-chevron-down" />
+      </button>
+      <div class="filters-container" :class="{ active: isOpened }">
         <filter-menu
           label="Color"
           :options="colors"
@@ -21,8 +24,8 @@
       </div>
       <sort-select />
     </div>
-    <div class="d-flex align-center justify-space-between ga-8 py-4">
-      <div class="d-inline-flex align-center ga-2">
+    <div class="d-flex align-center justify-space-between ga-3 py-4">
+      <div class="d-inline-flex align-center ga-2 flex-wrap">
         <filter-tag
           v-if="filterData.size"
           :label="filterData.size"
@@ -55,7 +58,14 @@ import FilterTag from './components/FilterTag.vue'
 import colors from '@/data/colors.json'
 import sizes from '@/data/sizes.json'
 
-import { reactive, watch, onMounted } from 'vue'
+import { ref, reactive, watch, onMounted } from 'vue'
+
+// Filters Menu
+const isOpened = ref(false)
+
+function onMenuClick() {
+  isOpened.value = isOpened.value ? false : true
+}
 
 import { useCatalogStore } from '@/stores/catalog'
 const catalogStore = useCatalogStore()
@@ -104,6 +114,33 @@ function clearAll() {
 </script>
 
 <style lang="scss" scoped>
+.filters-btn {
+  @media (width > 519.98px) {
+    display: none;
+  }
+}
+.filters-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 3rem 2rem;
+  @media (width < 519.98px) {
+    display: grid;
+    align-content: start;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    height: 40%;
+    width: 100%;
+    background-color: #eaeaeb;
+    padding: 2rem 1.75rem;
+    transform: translate(0, 100%);
+    transition: transform 0.3s ease 0s;
+    &.active {
+      transform: translate(0, 0);
+    }
+  }
+}
 .border-bottom {
   border-bottom: 1.5px solid #e5e5e5;
 }
@@ -118,5 +155,6 @@ function clearAll() {
   font-size: 0.75rem;
   letter-spacing: 0.125rem;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 </style>
