@@ -45,9 +45,10 @@ async function onLoadMore() {
   loadFilteredList()
 }
 
+// Breadcrumps settings
 const breadcrumps = [
   { title: 'Home', disabled: false, href: '/' },
-  { title: 'Catalog', disabled: false, href: '/' },
+  { title: 'Catalog', disabled: false, href: '/catalog' },
   { title: props.clothingType, disabled: true }
 ]
 </script>

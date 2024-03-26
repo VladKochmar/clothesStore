@@ -22,7 +22,7 @@
             <div class="d-inline-flex flex-column flex-sm-row ga-2 ga-md-3">
               <router-link
                 :to="{
-                  name: 'catalog',
+                  name: 'catalog-by-type',
                   params: { clothingType: 'sweatshirts' },
                   query: { color: 'black', price: '30-100' }
                 }"

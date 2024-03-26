@@ -9,7 +9,10 @@
           class="title mb-8 mb-sm-15"
           v-html="$t('pages.home.images-container.shirts.title')"
         ></h2>
-        <router-link :to="{ name: 'home' }" class="images-section__link">
+        <router-link
+          :to="{ name: 'catalog-by-type', params: { clothingType: 'shirts' } }"
+          class="images-section__link"
+        >
           {{ $t('pages.home.images-container.shirts.link') }}
         </router-link>
       </div>
@@ -23,7 +26,10 @@
           class="title mb-8 mb-sm-15"
           v-html="$t('pages.home.images-container.t-shirts.title')"
         ></h2>
-        <router-link :to="{ name: 'home' }" class="images-section__link">
+        <router-link
+          :to="{ name: 'catalog-by-type', params: { clothingType: 't-shirts' } }"
+          class="images-section__link"
+        >
           {{ $t('pages.home.images-container.t-shirts.link') }}
         </router-link>
       </div>
@@ -37,7 +43,10 @@
           class="title mb-8 mb-sm-15"
           v-html="$t('pages.home.images-container.sweatshirts.title')"
         ></h2>
-        <router-link :to="{ name: 'home' }" class="images-section__link">
+        <router-link
+          :to="{ name: 'catalog-by-type', params: { clothingType: 'sweatshirts' } }"
+          class="images-section__link"
+        >
           {{ $t('pages.home.images-container.sweatshirts.link') }}
         </router-link>
       </div>

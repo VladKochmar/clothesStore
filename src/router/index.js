@@ -10,10 +10,19 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/:clothingType',
+      path: '/catalog',
       name: 'catalog',
+      component: () => import('@/views/CommonCatalog.vue')
+    },
+    {
+      path: '/catalog/:clothingType',
+      name: 'catalog-by-type',
       component: () => import('@/views/CatalogView.vue'),
-      props: true
+      props: true,
+      beforeEnter: (to) => {
+        const clothingExists = validateClothingType(to.params.clothingType)
+        if (!clothingExists) return { name: 'page-not-found' }
+      }
     },
     {
       path: '/:path(.*)*',
@@ -22,5 +31,10 @@ const router = createRouter({
     }
   ]
 })
+
+function validateClothingType(clothingType) {
+  const validTypes = ['t-shirts', 'shirts', 'sweatshirts']
+  return validTypes.includes(clothingType)
+}
 
 export default router

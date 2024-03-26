@@ -83,7 +83,7 @@ const filterData = reactive({
 
 watch(filterData, () => {
   router.push({
-    name: 'catalog',
+    name: 'catalog-by-type',
     params: { clothingType: route.params.clothingType },
     query: {
       color: filterData.color,
