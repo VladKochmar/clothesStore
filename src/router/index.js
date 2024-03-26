@@ -14,6 +14,11 @@ const router = createRouter({
       name: 'catalog',
       component: () => import('@/views/CatalogView.vue'),
       props: true
+    },
+    {
+      path: '/:path(.*)*',
+      name: 'page-not-found',
+      component: () => import('@/views/PageNotFound.vue')
     }
   ]
 })

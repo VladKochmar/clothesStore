@@ -59,6 +59,10 @@
         "text": "You will always be in fashion with our large selection of sweatshirts."
       },
       "empty": "Unfortunately, we could not find any offers"
+    },
+    "not-found": {
+      "title": "Oops!",
+      "text": "Sorry, page does not found"
     }
   }
 }
