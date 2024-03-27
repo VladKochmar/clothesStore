@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": {
+      "uk": "Наша Місія",
+      "en": "Our Mission"
+    },
+    "text": {
+      "uk": "У нас є одна проста, але міцна місія - надихати та підтримувати наших клієнтів у досягненні їхніх цілей. Ми віримо в інновації, які змінюють світ, та намагаємося створити середовище, де кожен може розвиватися та досягати успіху.",
+      "en": "We have one simple but strong mission: to inspire and support our clients in achieving their goals. We believe in innovations that change the world and strive to create an environment where everyone can develop and succeed."
+    },
+    "imgSrc": "https://files.cdn.printful.com/o/upload/blog-post-img-upload/43/43abed356a6b0e86335c2a7032b9f7a0_t"
+  },
+  {
+    "id": 2,
+    "title": {
+      "uk": "Наша Історія",
+      "en": "Our History"
+    },
+    "text": {
+      "uk": "Від маленької стартап-команди до визнаної лідера у галузі — наша історія — це шлях наполегливої роботи, творчого підходу та невичерпного ентузіазму. Ми з гордістю дивимось на наш минулий успіх та сподіваємося на багато яскравих сторінок у майбутньому.",
+      "en": "From a small startup team to a recognized industry leader, our story is one of hard work, creativity, and inexhaustible enthusiasm. We look back on our past success with pride and look forward to many more bright chapters in the future."
+    },
+    "imgSrc": "https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/58/125622/1.jpg?8198"
+  },
+  {
+    "id": 3,
+    "title": {
+      "uk": "Наша Команда",
+      "en": "Our Team"
+    },
+    "text": {
+      "uk": "Успіх нашої компанії - це результат талановитих та пристрасних людей, які стоять за кожним нашим досягненням. Наша команда - це спільнота різноманітних ідей, досвіду та культур, що об'єднується в одному завданні - зробити світ кращим.",
+      "en": "The success of our company is the result of the talented and passionate people behind each of our achievements. Our team is a community of diverse ideas, experiences, and cultures, united in one mission - to make the world a better place."
+    },
+    "imgSrc": "https://image.uniqlo.com/UQ/ST3/eu/imagesother/2024/appeal/m-tshirts-mb.jpg"
+  }
+]

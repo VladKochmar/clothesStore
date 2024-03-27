@@ -45,6 +45,19 @@
       "comfortable": "We make things comfortable",
       "good-at-you": "T-shirt looks <strong>good</strong> at you"
     },
+    "about": {
+      "main-section": {
+        "title": "Free your style: dress in feelings!",
+        "text": "Explore Our Mission"
+      },
+      "inspire": {
+        "title": "You inspire us and we want to inspire you too",
+        "text1": "Every step of the way, we feel a burning desire to share, teach, and learn. Everything we do is inspired by you - our beloved communities.",
+        "text2": "Our mission is to find beauty in every little thing and make the incredible ordinary. This inspires you to find new ways and discover the brightest colors of life.",
+        "text3": "We believe in the power of joint creativity. Every project, every idea is the result of our joint work and your uniqueness. Together we create magic.",
+        "text4": "Our impressive stories have endured through time because of your passion for the new, your belief in the future, and your willingness to change the world. Our innovation is a response to your needs and desire to see more."
+      }
+    },
     "catalog": {
       "shirts": {
         "title": "Shirts",
