@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "title": {
+      "en": "Main",
+      "uk": "Головне"
+    },
+    "list": [
+      {
+        "id": 1,
+        "title": {
+          "en": "Catalog",
+          "uk": "Каталог"
+        },
+        "link": "/catalog"
+      },
+      {
+        "id": 2,
+        "title": {
+          "en": "Shirts",
+          "uk": "Сорочки"
+        },
+        "link": "/catalog/shirts"
+      },
+      {
+        "id": 3,
+        "title": {
+          "en": "T-shirts",
+          "uk": "Футболки"
+        },
+        "link": "/catalog/t-shirts"
+      },
+      {
+        "id": 4,
+        "title": {
+          "en": "Sweatshirts",
+          "uk": "Світшоти"
+        },
+        "link": "/catalog/sweatshirts"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": {
+      "en": "Information",
+      "uk": "Інформація"
+    },
+    "list": [
+      {
+        "id": 1,
+        "title": {
+          "en": "Payments",
+          "uk": "Платежі"
+        },
+        "link": "/catalog"
+      },
+      {
+        "id": 2,
+        "title": {
+          "en": "Shipping & Delivery",
+          "uk": "Відправлення та доставка"
+        },
+        "link": "/catalog/shirts"
+      },
+      {
+        "id": 3,
+        "title": {
+          "en": "Returns",
+          "uk": "Право на повернення"
+        },
+        "link": "/catalog/t-shirts"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": {
+      "en": "Company",
+      "uk": "Компанія"
+    },
+    "list": [
+      {
+        "id": 1,
+        "title": {
+          "en": "About us",
+          "uk": "Про нас"
+        },
+        "link": "/about-us"
+      },
+      {
+        "id": 2,
+        "title": {
+          "en": "Contacts",
+          "uk": "Контакти"
+        },
+        "link": "/catalog/shirts"
+      }
+    ]
+  }
+]

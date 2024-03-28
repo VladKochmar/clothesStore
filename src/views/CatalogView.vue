@@ -59,7 +59,4 @@ const breadcrumps = [
   font-size: 0.875rem;
   max-width: 25rem;
 }
-.mw-390 {
-  max-width: 24.375rem;
-}
 </style>
