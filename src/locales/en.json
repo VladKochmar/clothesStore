@@ -1,8 +1,15 @@
 {
+  "header": {
+    "shipping": "Free shipping & free returns",
+    "support": "Support"
+  },
   "menu": {
-    "home": "Home",
-    "sale": "Sale",
-    "collections": "Collections"
+    "catalog": "Catalog",
+    "shirts": "Shirts",
+    "t-shirts": "T-shirts",
+    "sweatshirts": "Sweatshirts",
+    "about": "About Us",
+    "contacts": "Contacts"
   },
   "buttons": {
     "cart": "Add to cart",

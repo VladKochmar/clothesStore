@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+    <header-component />
     <main>
       <slot></slot>
     </main>
@@ -8,6 +9,7 @@
 </template>
 
 <script setup>
+import HeaderComponent from '@/components/header/HeaderComponent.vue'
 import FooterComponent from '@/components/footer/FooterComponent.vue'
 </script>
 
