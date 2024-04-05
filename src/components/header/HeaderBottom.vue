@@ -36,8 +36,9 @@
           </ul>
         </nav>
         <ul class="actions">
-          <li class="actions__item">
-            <v-icon icon="fa-solid fa-magnifying-glass"></v-icon>
+          <li>
+            <!-- <v-icon icon="fa-solid fa-magnifying-glass"></v-icon> -->
+            <search-section />
           </li>
           <li class="actions__item">
             <v-icon icon="fa-regular fa-heart"></v-icon>
@@ -54,7 +55,9 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import SearchSection from './SearchSection.vue'
+</script>
 
 <style lang="scss" scoped>
 .header-bottom {

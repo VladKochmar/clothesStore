@@ -1,13 +1,8 @@
 <template>
   <div class="mobile-header-bottom d-flex align-center justify-space-between gc-4">
     <div class="actions">
-      <!-- <button class="actions__item menu-icon">
-        <span></span>
-      </button> -->
       <mobile-menu />
-      <button class="actions__item">
-        <v-icon icon="fa-solid fa-magnifying-glass"></v-icon>
-      </button>
+      <search-section />
     </div>
     <router-link :to="{ name: 'home' }" class="mobile-header-bottom__logo"
       ><img src="@/assets/img/icon.png" alt="Logo"
@@ -25,6 +20,7 @@
 
 <script setup>
 import MobileMenu from './MobileMenu.vue'
+import SearchSection from './SearchSection.vue'
 </script>
 
 <style lang="scss" scoped>
