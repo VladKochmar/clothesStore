@@ -10,11 +10,11 @@ import {
 
 class GoogleAuthOperations {
   constructor({
-    saveCredentialsInLocalStorage = true,
-    authCredentialLocalStorageKey = 'authCredential'
+    saveCredentialsInLocalStorage = true
+    // authCredentialLocalStorageKey = 'authCredential'
   } = {}) {
     this.saveCredentialsInLocalStorage = saveCredentialsInLocalStorage
-    this.authCredentialLocalStorageKey = authCredentialLocalStorageKey
+    // this.authCredentialLocalStorageKey = authCredentialLocalStorageKey
   }
 
   loginWithGoogleAccountPopup() {
@@ -31,6 +31,7 @@ class GoogleAuthOperations {
         })
     })
   }
+
   signUpWithWithEmailAndPassword({ email, password }) {
     return new Promise((resolve, reject) => {
       if (!email || !password) reject(false)
@@ -48,6 +49,7 @@ class GoogleAuthOperations {
       }
     })
   }
+
   signInWithWithEmailAndPassword({ email, password }) {
     return new Promise((resolve, reject) => {
       if (!email || !password) reject(false)
@@ -70,7 +72,7 @@ class GoogleAuthOperations {
     return new Promise((resolve, reject) => {
       signOut(auth)
         .then(() => {
-          localStorage.removeItem(this.authCredentialLocalStorageKey)
+          // localStorage.removeItem(this.authCredentialLocalStorageKey)
           resolve(true)
         })
         .catch((error) => {

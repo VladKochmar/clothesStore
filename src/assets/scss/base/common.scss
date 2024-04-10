@@ -48,6 +48,9 @@
       background-color: $grey;
     }
   }
+  &[disabled] {
+    background-color: $dimGray;
+  }
 }
 
 .rounded-button {

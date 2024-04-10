@@ -13,15 +13,21 @@ export const useAuthStore = defineStore('auth', () => {
 
   const getUser = computed(() => user.value)
 
-  async function signUpWithWithEmailAndPassword(email, password) {
+  function setUser(userData) {
+    user.value = userData
+  }
+
+  async function signUpWithWithEmailAndPassword({ email, password, name }) {
     generalApiOperation({
       operation: () => authOperations.signUpWithWithEmailAndPassword({ email, password })
     }).then(async (res) => {
       user.value = res
+      console.log(user.value)
 
       await usersStore.addUserWithCustomId({
         id: user?.value?.uid,
         data: {
+          name,
           email,
           permissions: {
             create: false,
@@ -34,7 +40,7 @@ export const useAuthStore = defineStore('auth', () => {
     })
   }
 
-  async function signInWithWithEmailAndPassword(email, password) {
+  async function signInWithWithEmailAndPassword({ email, password }) {
     return new Promise((resolve, reject) => {
       generalApiOperation({
         operation: () => authOperations.signInWithWithEmailAndPassword({ email, password })
@@ -65,6 +71,7 @@ export const useAuthStore = defineStore('auth', () => {
               id: user?.value?.uid,
               data: {
                 email: user?.value?.email,
+                name: user?.value?.displayName,
                 permissions: {
                   create: false,
                   read: true,
@@ -96,6 +103,7 @@ export const useAuthStore = defineStore('auth', () => {
   }
 
   return {
+    setUser,
     signUpWithWithEmailAndPassword,
     signInWithWithEmailAndPassword,
     loginWithGoogleAccount,

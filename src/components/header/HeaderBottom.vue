@@ -37,14 +37,13 @@
         </nav>
         <ul class="actions">
           <li>
-            <!-- <v-icon icon="fa-solid fa-magnifying-glass"></v-icon> -->
             <search-section />
           </li>
           <li class="actions__item">
             <v-icon icon="fa-regular fa-heart"></v-icon>
           </li>
           <li class="actions__item">
-            <v-icon icon="fa-solid fa-user"></v-icon>
+            <registration-section />
           </li>
           <li class="actions__item">
             <v-icon icon="fa-solid fa-cart-shopping"></v-icon>
@@ -57,6 +56,7 @@
 
 <script setup>
 import SearchSection from './SearchSection.vue'
+import RegistrationSection from './registration/RegistrationSection.vue'
 </script>
 
 <style lang="scss" scoped>

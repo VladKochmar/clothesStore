@@ -6,9 +6,7 @@
     <nav class="mobile-menu">
       <div class="d-inline-flex align-center ga-3">
         <lang-switcher />
-        <router-link :to="{ name: 'home' }" class="sign-up">
-          <v-icon icon="fa-solid fa-user"></v-icon>
-        </router-link>
+        <registration-section />
       </div>
       <ul class="mobile-menu__list">
         <li class="mobile-menu__item">
@@ -46,6 +44,7 @@
 <script setup>
 import { ref } from 'vue'
 import LangSwitcher from './LangSwitcher.vue'
+import RegistrationSection from './registration/RegistrationSection.vue'
 
 const isMenuOpen = ref(false)
 

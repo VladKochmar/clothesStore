@@ -1,7 +1,10 @@
 {
   "header": {
     "shipping": "Free shipping & free returns",
-    "support": "Support"
+    "support": "Support",
+    "or": "or",
+    "login": "Log In",
+    "signup": "Sign Up"
   },
   "menu": {
     "catalog": "Catalog",
@@ -11,10 +14,30 @@
     "about": "About Us",
     "contacts": "Contacts"
   },
+  "profile-sidebar": {
+    "details": "My Details",
+    "history": "Order History",
+    "addresses": "My Addresses"
+  },
+  "fields": {
+    "email": "E-mail",
+    "password": "Password",
+    "hint": "At least 8 characters",
+    "required": "Required",
+    "match": "The email and password you entered don't match",
+    "name": "Your full name"
+  },
   "buttons": {
     "cart": "Add to cart",
     "fitting": "Fitting Room",
-    "more": "Load more"
+    "more": "Load more",
+    "google": "Log In with Google",
+    "log-out": "Log Out",
+    "save": "Save Details",
+    "close": "Close"
+  },
+  "snackbar": {
+    "success": "Your data has been updated"
   },
   "pages": {
     "home": {
