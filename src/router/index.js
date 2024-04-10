@@ -26,7 +26,7 @@ const router = createRouter({
       name: 'catalog',
       component: () => import('@/views/CommonCatalog.vue'),
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -76,6 +76,7 @@ function getCurrentUser() {
 }
 
 router.beforeEach(async (to, from, next) => {
+  document.body.classList.remove('lock')
   const currentUser = await getCurrentUser()
   if (to.matched.some((record) => record.meta.requiresAuth)) {
     if (currentUser) {

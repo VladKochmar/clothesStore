@@ -96,7 +96,8 @@ function onClick() {
   padding: 3.125rem 1.25rem;
   overflow: auto;
   display: grid;
-  gap: 1.5rem 0;
+  align-content: start;
+  gap: 3rem 0;
   justify-items: end;
   transition: right 0.3s ease 0s;
   // .mobile-menu__item
