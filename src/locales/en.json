@@ -106,6 +106,21 @@
     "not-found": {
       "title": "Oops!",
       "text": "Sorry, page does not found"
+    },
+    "contacts": {
+      "title": "We’d love <br/> to hear <strong>from</strong> <br/> you",
+      "text": "Contact us at",
+      "or": "or"
+    },
+    "payments": {
+      "title": "Payments"
+    },
+    "delivery": {
+      "title": "Shipping & Delivery"
+    },
+    "returns": {
+      "title": "Returns",
+      "text": "<p>You have the right to cancel this contract within 14 days without giving any reason.  The cancellation period is fourteen days from the date on which you or a third party designated by you, excluding the carrier, took possession of the goods.</p><br/><p>In order to exercise your right to withdraw, you must notify us in a clear statement of your decision to withdraw.  You may use the enclosed model withdrawal form, which is not mandatory.</p></br><p>In order to meet the withdrawal period, it is sufficient to send a notice of exercise of the right of withdrawal before the end of the withdrawal period. </p><br/><p>Consequences of Withdrawal</p><br/><p>If you cancel this Agreement, we will refund all payments we have received from you, including shipping charges (excluding any additional charges resulting from your selection of a shipping method other than the lowest cost standard shipping method offered by us), immediately and no later than fourteen days from the date we receive notice of your cancellation of this Agreement.  For this refund, we will use the same payment method you used for the original transaction, unless otherwise expressly agreed with you; under no circumstances will you be charged for this refund.  We may refuse a refund until we receive the goods back or until you provide proof that you have returned the goods, whichever comes first.</p><br/><p>You must return or transfer the goods to us immediately and in any event no later than fourteen days from the date you notify us of your cancellation of this agreement.  This deadline will be deemed to have been met if you send the product before the fourteen day period expires.  You will be liable for any loss of value of the goods only if such loss of value is due to processing of the goods that is not necessary to verify their nature, properties and functioning.</p>"
     }
   }
 }

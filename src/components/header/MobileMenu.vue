@@ -31,7 +31,7 @@
           <router-link :to="{ name: 'about' }">{{ $t('menu.about') }}</router-link>
         </li>
         <li class="mobile-menu__item">
-          <router-link :to="{ name: 'home' }">{{ $t('menu.contacts') }}</router-link>
+          <router-link :to="{ name: 'contacts' }">{{ $t('menu.contacts') }}</router-link>
         </li>
       </ul>
       <a href="mailto:vladkochmar17@gmail.com" class="mobile-menu__support">

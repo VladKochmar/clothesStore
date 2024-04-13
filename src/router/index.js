@@ -51,6 +51,38 @@ const router = createRouter({
       }
     },
     {
+      path: '/contacts',
+      name: 'contacts',
+      component: () => import('@/views/documentations/OurContacts.vue'),
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/payments',
+      name: 'payments',
+      component: () => import('@/views/documentations/PaymentsView.vue'),
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/delivery',
+      name: 'delivery',
+      component: () => import('@/views/documentations/DeliveryView.vue'),
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/returns',
+      name: 'returns',
+      component: () => import('@/views/documentations/ReturnsView.vue'),
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
       path: '/:path(.*)*',
       name: 'page-not-found',
       component: () => import('@/views/PageNotFound.vue')
