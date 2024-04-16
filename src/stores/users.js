@@ -54,6 +54,18 @@ export const useUsersStore = defineStore('users', () => {
     })
   }
 
+  async function addItemToArray(id, arrayProperty, itemData) {
+    currentUser.value = await generalApiOperation({
+      operation: () => collectionDB.addItemToArray(id, arrayProperty, itemData)
+    })
+  }
+
+  async function removeItemFromArray(id, arrayProperty, itemData) {
+    currentUser.value = await generalApiOperation({
+      operation: () => collectionDB.removeItemFromArray(id, arrayProperty, itemData)
+    })
+  }
+
   const getUsersList = computed(() => usersList.value)
   const getCurrentUser = computed(() => currentUser.value)
 
@@ -66,6 +78,8 @@ export const useUsersStore = defineStore('users', () => {
     deleteUser,
     getUsersList,
     getCurrentUser,
-    updateUser
+    updateUser,
+    addItemToArray,
+    removeItemFromArray
   }
 })

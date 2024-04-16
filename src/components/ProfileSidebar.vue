@@ -8,12 +8,12 @@
           </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'home' }">
+          <router-link :to="{ name: 'orders' }">
             {{ $t('profile-sidebar.history') }}
           </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'home' }">
+          <router-link :to="{ name: 'addresses' }">
             {{ $t('profile-sidebar.addresses') }}
           </router-link>
         </li>

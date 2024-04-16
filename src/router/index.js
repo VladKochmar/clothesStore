@@ -83,6 +83,22 @@ const router = createRouter({
       }
     },
     {
+      path: '/my-addresses',
+      name: 'addresses',
+      component: () => import('@/views/ProfilePages/MyAddresses.vue'),
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/my-orders',
+      name: 'orders',
+      component: () => import('@/views/ProfilePages/OrdersView.vue'),
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: '/:path(.*)*',
       name: 'page-not-found',
       component: () => import('@/views/PageNotFound.vue')

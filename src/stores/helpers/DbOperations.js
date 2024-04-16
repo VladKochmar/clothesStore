@@ -77,7 +77,8 @@ class DbOperations {
             [arrayProperty]: arrayUnion(value)
           })
             .then(() => {
-              resolve(true)
+              const itemData = this.getItemById(id)
+              resolve(itemData)
             })
             .catch((error) => {
               reject(error)
@@ -87,7 +88,8 @@ class DbOperations {
             [arrayProperty]: [value]
           })
             .then(() => {
-              resolve(true)
+              const itemData = this.getItemById(id)
+              resolve(itemData)
             })
             .catch((error) => {
               reject(error)
@@ -102,7 +104,8 @@ class DbOperations {
         [arrayProperty]: arrayRemove(value)
       })
         .then(() => {
-          resolve(true)
+          const itemData = this.getItemById(id)
+          resolve(itemData)
         })
         .catch((error) => {
           reject(error)
@@ -126,7 +129,7 @@ class DbOperations {
       const oldDocRef = doc(this.dbCollection, itemId)
       updateDoc(oldDocRef, data)
         .then(() => {
-          resolve(true)
+          resolve(data)
         })
         .catch((error) => {
           reject(error)

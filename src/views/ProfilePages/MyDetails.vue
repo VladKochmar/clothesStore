@@ -8,6 +8,12 @@
         variant="outlined"
         class="mb-3 w-100"
       ></v-text-field>
+      <v-text-field
+        v-model="userData.phone"
+        :label="$t('fields.phone')"
+        variant="outlined"
+        class="mb-3 w-100"
+      ></v-text-field>
       <div class="mb-6">{{ $t('fields.email') }}: {{ userData?.email }}</div>
       <button class="button button_black w-100" @click="update">
         {{ $t('buttons.save') }}

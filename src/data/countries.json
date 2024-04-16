@@ -1,0 +1,8 @@
+[
+  { "id": 1, "title": { "en": "Ukraine", "uk": "Україна" } },
+  { "id": 2, "title": { "en": "Poland", "uk": "Польща" } },
+  { "id": 3, "title": { "en": "Germany", "uk": "Німеччина" } },
+  { "id": 4, "title": { "en": "France", "uk": "Франція" } },
+  { "id": 5, "title": { "en": "England", "uk": "Англія" } },
+  { "id": 6, "title": { "en": "Spain", "uk": "Іспанія" } }
+]

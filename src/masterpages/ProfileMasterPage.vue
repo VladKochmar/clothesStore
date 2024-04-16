@@ -25,7 +25,7 @@ import ProfileSidebar from '@/components/ProfileSidebar.vue'
   &__container {
     display: flex;
     gap: 1.5rem 4.625rem;
-    @media (width < 519.98px) {
+    @media (width < 700.98px) {
       flex-direction: column;
     }
   }
