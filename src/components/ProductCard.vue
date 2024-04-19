@@ -1,7 +1,10 @@
 <template>
   <div class="product-card">
     <div class="product-card__header mb-2 mb-lg-6">
-      <router-link :to="{ name: 'home' }" class="product-card__img">
+      <router-link
+        :to="{ name: 'product', params: { productId: productData.id } }"
+        class="product-card__img"
+      >
         <img :src="productData.imgSrc" :alt="productData.title" />
       </router-link>
       <v-btn

@@ -30,9 +30,6 @@
               >
                 {{ $t('buttons.cart') }}
               </router-link>
-              <router-link :to="{ name: 'home' }" class="button button_border">
-                {{ $t('buttons.fitting') }}
-              </router-link>
             </div>
           </div>
           <div class="main-swiper-slide__block-img">

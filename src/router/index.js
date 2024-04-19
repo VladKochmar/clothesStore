@@ -43,6 +43,15 @@ const router = createRouter({
       }
     },
     {
+      path: '/product/:productId',
+      name: 'product',
+      component: () => import('@/views/ProductView.vue'),
+      props: true,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
       path: '/my-profile',
       name: 'profile',
       component: () => import('@/views/ProfilePages/MyDetails.vue'),

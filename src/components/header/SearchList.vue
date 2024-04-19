@@ -1,7 +1,10 @@
 <template>
   <ul>
     <li v-for="product in productsList" :key="product.id">
-      <router-link :to="{ name: 'catalog' }" class="searched-item">
+      <router-link
+        :to="{ name: 'product', params: { productId: product.id } }"
+        class="searched-item"
+      >
         <img :src="product.imgSrc" class="searched-item__img" />
         <strong>{{ product.title }}</strong>
       </router-link>

@@ -34,12 +34,13 @@
   },
   "buttons": {
     "cart": "Add to cart",
-    "fitting": "Fitting Room",
     "more": "Load more",
     "google": "Log In with Google",
     "log-out": "Log Out",
     "save": "Save Details",
-    "close": "Close"
+    "close": "Close",
+    "visit": "Visit our catalog",
+    "subscribe": "Subscribe"
   },
   "snackbar": {
     "success": "Your data has been updated"
@@ -137,6 +138,16 @@
     },
     "orders": {
       "title": "My Orders"
+    },
+    "product": {
+      "more-to-see": "There’s more to see",
+      "banner": "Find your true size, and styles that are so you.",
+      "subscribe": {
+        "title": "Don’t<br/>miss out",
+        "label": "Sign up for new arrivals, offers, and more!"
+      },
+      "size": "Size",
+      "delivery": "Delivery 1-2 days"
     }
   }
 }
