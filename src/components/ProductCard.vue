@@ -8,12 +8,20 @@
         <img :src="productData.imgSrc" :alt="productData.title" />
       </router-link>
       <v-btn
-        icon="far fa-heart"
+        :icon="heartIconName"
         color="pinkSwan"
         variant="outlined"
         size="small"
         class="product-card__btn"
+        @click="onClick(productData.id)"
       ></v-btn>
+      <v-snackbar v-model="snackbar">
+        {{ $t('snackbar.login') }}
+
+        <template v-slot:actions>
+          <v-btn color="pink" variant="text" @click="snackbar = false"> Close </v-btn>
+        </template>
+      </v-snackbar>
       <div v-if="hasLabel" class="product-card__label">{{ productData.label }}</div>
     </div>
     <div class="product-card__body">
@@ -31,7 +39,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, toRefs, ref } from 'vue'
 
 const props = defineProps({
   productData: {
@@ -42,6 +50,32 @@ const props = defineProps({
 
 const hasDiscount = computed(() => props.productData.discount)
 const hasLabel = computed(() => props.productData.label)
+
+// Getting User Data
+import { useAuthStore } from '@/stores/auth'
+const { getUser } = toRefs(useAuthStore())
+
+import { useUsersStore } from '@/stores/users'
+const usersStore = useUsersStore()
+const { addItemToArray, removeItemFromArray } = usersStore
+const { getCurrentUser } = toRefs(usersStore)
+
+// Checking if the product is favorite
+const isFavorite = computed(() => getCurrentUser.value?.wishlist.includes(props.productData.id))
+const heartIconName = computed(() => (isFavorite.value ? 'fa-solid fa-heart' : 'far fa-heart'))
+
+// Snackbar
+const snackbar = ref(false)
+
+// Select or deselect product
+function onClick(productId) {
+  if (getUser.value) {
+    if (isFavorite.value) removeItemFromArray(getUser.value?.uid, 'wishlist', productId)
+    else addItemToArray(getUser.value?.uid, 'wishlist', productId)
+  } else {
+    snackbar.value = true
+  }
+}
 </script>
 
 <style lang="scss" scoped>

@@ -43,7 +43,8 @@
     "subscribe": "Subscribe"
   },
   "snackbar": {
-    "success": "Your data has been updated"
+    "success": "Your data has been updated",
+    "login": "You need to log in to your account"
   },
   "pages": {
     "home": {
@@ -148,6 +149,9 @@
       },
       "size": "Size",
       "delivery": "Delivery 1-2 days"
+    },
+    "wishlist": {
+      "title": "My Wishlist"
     }
   }
 }

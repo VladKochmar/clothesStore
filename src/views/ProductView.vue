@@ -37,7 +37,10 @@ const props = defineProps({
   }
 })
 
-import { onMounted, toRefs } from 'vue'
+import { onMounted, provide, toRefs } from 'vue'
+
+// Provide a product id to a child component
+provide('productId', props.productId)
 
 import { useCatalogStore } from '@/stores/catalog'
 const catalogStore = useCatalogStore()

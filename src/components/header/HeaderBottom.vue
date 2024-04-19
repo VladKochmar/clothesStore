@@ -40,7 +40,9 @@
             <search-section />
           </li>
           <li class="actions__item">
-            <v-icon icon="fa-regular fa-heart"></v-icon>
+            <router-link :to="{ name: 'wishlist' }">
+              <v-icon icon="fa-regular fa-heart"></v-icon>
+            </router-link>
           </li>
           <li class="actions__item">
             <registration-section />

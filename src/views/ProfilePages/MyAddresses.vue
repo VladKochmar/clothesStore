@@ -7,7 +7,7 @@
           <template v-slot:activator="{ props: activatorProps }">
             <button v-bind="activatorProps" class="cross-button">+</button>
           </template>
-          <address-editor :user-id="getUser.uid" @close="onClose($event)" />
+          <address-editor :user-id="getUser?.uid" @close="onClose($event)" />
         </v-dialog>
       </div>
       <template v-if="getCurrentUser?.addresses?.length">
@@ -28,7 +28,7 @@ import ProfileMasterPage from '@/masterpages/ProfileMasterPage.vue'
 import AddressItem from '@/components/AddressItem.vue'
 import AddressEditor from '@/components/AddressEditor.vue'
 
-import { ref, toRefs, onMounted } from 'vue'
+import { ref, toRefs } from 'vue'
 
 // Variable for Address Editor popup
 const dialog = ref(false)
@@ -39,44 +39,13 @@ import { useAuthStore } from '@/stores/auth'
 const { getUser } = toRefs(useAuthStore())
 
 import { useUsersStore } from '@/stores/users'
-const usersStore = useUsersStore()
-
-const { loadUserById, loadUsersList } = usersStore
-const { getCurrentUser } = toRefs(usersStore)
-
-onMounted(async () => {
-  await loadUserById(getUser.value.uid)
-  await loadUsersList()
-})
+const { getCurrentUser } = toRefs(useUsersStore())
 
 // Close Pop-up
 
 function onClose(value) {
   dialog.value = value
 }
-
-/*
-const addresses = [
-  {
-    id: 1,
-    name: 'Vlad Kochmar',
-    city: 'Миколаїв',
-    country: 'Україна',
-    address: 'Проспект Миру 11',
-    postcode: '54000',
-    phone: '+380730406906'
-  },
-  {
-    id: 2,
-    name: 'Vlad Kochmar',
-    city: 'Wroclaw',
-    country: 'Poland',
-    address: 'Ulanowskiego 1/3',
-    postcode: '53-144',
-    phone: '+380730406906'
-  }
-]
-*/
 </script>
 
 <style lang="scss" scoped>

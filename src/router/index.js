@@ -108,6 +108,14 @@ const router = createRouter({
       }
     },
     {
+      path: '/my-wishlist',
+      name: 'wishlist',
+      component: () => import('@/views/WishlistView.vue'),
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: '/:path(.*)*',
       name: 'page-not-found',
       component: () => import('@/views/PageNotFound.vue')
@@ -116,15 +124,18 @@ const router = createRouter({
 })
 
 import { useAuthStore } from '@/stores/auth'
+import { useUsersStore } from '@/stores/users'
 
 function getCurrentUser() {
   const authStore = useAuthStore()
+  const usersStore = useUsersStore()
   return new Promise((resolve, reject) => {
     const resolveListener = onAuthStateChanged(
       getAuth(),
-      (user) => {
+      async (user) => {
         resolveListener()
         authStore.setUser(user)
+        await usersStore.loadUserById(user?.uid)
         resolve(user)
       },
       reject
@@ -140,7 +151,6 @@ router.beforeEach(async (to, from, next) => {
       next()
     } else {
       alert("You don't have access!")
-      next('/')
     }
   } else {
     next()
