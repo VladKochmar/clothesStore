@@ -3,7 +3,7 @@
     <div class="wishlist py-15">
       <div class="wishlist__container">
         <h1 class="main-title text-center mb-8">{{ $t('pages.wishlist.title') }}</h1>
-        <products-list v-if="wishlist.length" :products="wishlist" />
+        <products-list v-if="wishlist?.length" :products="wishlist" />
         <empty-list v-else />
       </div>
     </div>

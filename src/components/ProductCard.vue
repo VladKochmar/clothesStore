@@ -61,7 +61,7 @@ const { addItemToArray, removeItemFromArray } = usersStore
 const { getCurrentUser } = toRefs(usersStore)
 
 // Checking if the product is favorite
-const isFavorite = computed(() => getCurrentUser.value?.wishlist.includes(props.productData.id))
+const isFavorite = computed(() => getCurrentUser.value?.wishlist?.includes(props.productData?.id))
 const heartIconName = computed(() => (isFavorite.value ? 'fa-solid fa-heart' : 'far fa-heart'))
 
 // Snackbar
