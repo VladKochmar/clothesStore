@@ -8,7 +8,7 @@
       ><img src="@/assets/img/icon.png" alt="Logo"
     /></router-link>
     <div class="actions">
-      <router-link :to="{ name: 'home' }" class="actions__item">
+      <router-link :to="{ name: 'wishlist' }" class="actions__item">
         <v-icon icon="fa-regular fa-heart"></v-icon>
       </router-link>
       <router-link :to="{ name: 'home' }" class="actions__item">
