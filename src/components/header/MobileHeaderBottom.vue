@@ -11,7 +11,7 @@
       <router-link :to="{ name: 'wishlist' }" class="actions__item">
         <v-icon icon="fa-regular fa-heart"></v-icon>
       </router-link>
-      <router-link :to="{ name: 'home' }" class="actions__item">
+      <router-link :to="{ name: 'cart' }" class="actions__item">
         <v-icon icon="fa-solid fa-cart-shopping"></v-icon>
       </router-link>
     </div>

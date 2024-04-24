@@ -48,7 +48,9 @@
             <registration-section />
           </li>
           <li class="actions__item">
-            <v-icon icon="fa-solid fa-cart-shopping"></v-icon>
+            <router-link :to="{ name: 'cart' }">
+              <v-icon icon="fa-solid fa-cart-shopping"></v-icon>
+            </router-link>
           </li>
         </ul>
       </div>

@@ -29,12 +29,9 @@ export const useAuthStore = defineStore('auth', () => {
         data: {
           name,
           email,
-          permissions: {
-            create: false,
-            read: true,
-            update: false,
-            delete: false
-          }
+          addresses: [],
+          wishlist: [],
+          cart: []
         }
       })
     })
@@ -72,12 +69,9 @@ export const useAuthStore = defineStore('auth', () => {
               data: {
                 email: user?.value?.email,
                 name: user?.value?.displayName,
-                permissions: {
-                  create: false,
-                  read: true,
-                  update: false,
-                  delete: true
-                }
+                addresses: [],
+                wishlist: [],
+                cart: []
               }
             })
             .then(() => {

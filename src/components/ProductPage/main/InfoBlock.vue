@@ -6,9 +6,11 @@
       <span :class="{ 'old-price': hasDiscount }">{{ getCurrentItem?.price }}</span>
     </div>
     <payment-images />
-    <sizes-list />
+    <sizes-list @select="onSelectSize($event)" />
     <div class="d-flex gc-3 mb-3">
-      <button class="button button_black w-100">{{ $t('buttons.cart') }} {{ currentPrice }}</button>
+      <button @click="addToCart" :disabled="!currentSize" class="button button_black w-100">
+        {{ $t('buttons.cart') }} {{ currentPrice }}
+      </button>
       <button class="heart-button" @click="onClick(productId)">
         <v-icon :icon="heartIconName" />
       </button>
@@ -32,7 +34,7 @@
 </template>
 
 <script setup>
-import { computed, inject, toRefs, ref } from 'vue'
+import { computed, inject, toRefs, ref, provide } from 'vue'
 
 import PaymentImages from './PaymentImages.vue'
 import SizesList from './SizesList.vue'
@@ -77,6 +79,37 @@ function onClick(productId) {
   } else {
     snackbar.value = true
   }
+}
+
+// Size
+const currentSize = ref(null)
+provide('selectedSize', currentSize)
+
+function onSelectSize(selectedSize) {
+  currentSize.value = selectedSize
+}
+// Add to cart
+import { v4 as uuidv4 } from 'uuid'
+
+import { useOrdersStore } from '@/stores/orders'
+const { addItemWithCustomId } = useOrdersStore()
+
+function addToCart() {
+  const orderId = uuidv4()
+
+  const orderData = {
+    productId: productId,
+    title: getCurrentItem.value.title,
+    price: currentPrice.value,
+    size: currentSize.value,
+    color: getCurrentItem.value.color,
+    imgSrc: getCurrentItem.value.imgSrc,
+    totalPrice: currentPrice.value,
+    quantity: 1
+  }
+
+  addItemWithCustomId({ id: orderId, data: orderData })
+  addItemToArray(getUser.value?.uid, 'cart', orderId)
 }
 </script>
 

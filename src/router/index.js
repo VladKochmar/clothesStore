@@ -116,6 +116,14 @@ const router = createRouter({
       }
     },
     {
+      path: '/my-cart',
+      name: 'cart',
+      component: () => import('@/views/MyCartView.vue'),
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: '/:path(.*)*',
       name: 'page-not-found',
       component: () => import('@/views/PageNotFound.vue')

@@ -40,7 +40,10 @@
     "save": "Save Details",
     "close": "Close",
     "visit": "Visit our catalog",
-    "subscribe": "Subscribe"
+    "subscribe": "Subscribe",
+    "clear": "Clear all",
+    "remove": "Remove",
+    "checkout": "Go to Checkout"
   },
   "snackbar": {
     "success": "Your data has been updated",
@@ -152,6 +155,16 @@
     },
     "wishlist": {
       "title": "My Wishlist"
+    },
+    "cart": {
+      "cart-title": "My Cart",
+      "size": "Size:",
+      "color": "Color:",
+      "items": "items",
+      "summary": "Order Summary",
+      "total": "Total",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping & taxes"
     }
   }
 }

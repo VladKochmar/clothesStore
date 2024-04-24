@@ -1,11 +1,15 @@
 <template>
-  <button class="size-button" :class="{ 'out-of-stock': !isAvailable }" :disabled="!isAvailable">
+  <button
+    class="size-button"
+    :class="{ 'out-of-stock': !isAvailable, selected: isSelected }"
+    :disabled="!isAvailable"
+  >
     {{ size }}
   </button>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, inject, ref } from 'vue'
 
 const props = defineProps({
   size: {
@@ -19,6 +23,8 @@ const props = defineProps({
 })
 
 const isAvailable = computed(() => props.availableSizes?.includes(props.size))
+const selectedSize = ref(inject('selectedSize'))
+const isSelected = computed(() => props.size === selectedSize.value)
 </script>
 
 <style lang="scss" scoped>
@@ -34,6 +40,14 @@ const isAvailable = computed(() => props.availableSizes?.includes(props.size))
   height: 3rem;
   border-radius: 50%;
   border: 1px solid $pinkSwan;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+  &.selected {
+    color: $white;
+    background-color: $black;
+    border: 1px solid $black;
+  }
   &.out-of-stock {
     color: $pinkSwan;
     position: relative;

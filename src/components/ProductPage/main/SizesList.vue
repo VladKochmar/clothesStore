@@ -3,7 +3,11 @@
     <strong class="d-inline-block mb-3">{{ $t('pages.product.size') }}</strong>
     <ul class="d-flex flex-wrap gc-2 gr-3">
       <li v-for="size in sizes" :key="size.id">
-        <size-item :size="size.title" :available-sizes="getCurrentItem?.sizes" />
+        <size-item
+          @click="$emit('select', size.title)"
+          :size="size.title"
+          :available-sizes="getCurrentItem?.sizes"
+        />
       </li>
     </ul>
   </div>
