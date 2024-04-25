@@ -41,7 +41,13 @@
           </li>
           <li class="actions__item">
             <router-link :to="{ name: 'wishlist' }">
-              <v-icon icon="fa-regular fa-heart"></v-icon>
+              <v-badge
+                v-if="getCurrentUser.wishlist.length"
+                :content="getCurrentUser.wishlist.length"
+              >
+                <v-icon icon="fa-regular fa-heart"></v-icon>
+              </v-badge>
+              <v-icon v-else icon="fa-regular fa-heart"></v-icon>
             </router-link>
           </li>
           <li class="actions__item">
@@ -49,7 +55,10 @@
           </li>
           <li class="actions__item">
             <router-link :to="{ name: 'cart' }">
-              <v-icon icon="fa-solid fa-cart-shopping"></v-icon>
+              <v-badge v-if="getCurrentUser.cart.length" :content="getCurrentUser.cart.length">
+                <v-icon icon="fa-solid fa-cart-shopping"></v-icon>
+              </v-badge>
+              <v-icon v-else icon="fa-solid fa-cart-shopping"></v-icon>
             </router-link>
           </li>
         </ul>
@@ -59,8 +68,13 @@
 </template>
 
 <script setup>
+import { toRefs } from 'vue'
+
 import SearchSection from './SearchSection.vue'
 import RegistrationSection from './registration/RegistrationSection.vue'
+
+import { useUsersStore } from '@/stores/users'
+const { getCurrentUser } = toRefs(useUsersStore())
 </script>
 
 <style lang="scss" scoped>

@@ -9,18 +9,29 @@
     /></router-link>
     <div class="actions">
       <router-link :to="{ name: 'wishlist' }" class="actions__item">
-        <v-icon icon="fa-regular fa-heart"></v-icon>
+        <v-badge v-if="getCurrentUser.wishlist.length" :content="getCurrentUser.wishlist.length">
+          <v-icon icon="fa-regular fa-heart"></v-icon>
+        </v-badge>
+        <v-icon v-else icon="fa-regular fa-heart"></v-icon>
       </router-link>
       <router-link :to="{ name: 'cart' }" class="actions__item">
-        <v-icon icon="fa-solid fa-cart-shopping"></v-icon>
+        <v-badge v-if="getCurrentUser.cart.length" :content="getCurrentUser.cart.length">
+          <v-icon icon="fa-solid fa-cart-shopping"></v-icon>
+        </v-badge>
+        <v-icon v-else icon="fa-solid fa-cart-shopping"></v-icon>
       </router-link>
     </div>
   </div>
 </template>
 
 <script setup>
+import { toRefs } from 'vue'
+
 import MobileMenu from './MobileMenu.vue'
 import SearchSection from './SearchSection.vue'
+
+import { useUsersStore } from '@/stores/users'
+const { getCurrentUser } = toRefs(useUsersStore())
 </script>
 
 <style lang="scss" scoped>
@@ -38,6 +49,7 @@ import SearchSection from './SearchSection.vue'
   align-items: center;
   // .actions__item
   &__item {
+    position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
