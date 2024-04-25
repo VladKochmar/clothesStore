@@ -7,7 +7,7 @@
     </div>
     <div class="d-flex justify-space-between pb-6">
       <span>{{ $t('pages.cart.shipping') }}</span>
-      <span>{{ SHIPPING_AND_TAXES.toFixed(2) }}€</span>
+      <span>{{ shippingAndTaxes.toFixed(2) }}€</span>
     </div>
     <div class="d-flex justify-space-between pb-4">
       <span>{{ $t('pages.cart.total') }}</span>
@@ -32,9 +32,9 @@ const subtotalPrice = computed(() =>
   )
 )
 
-const SHIPPING_AND_TAXES = 20
+const shippingAndTaxes = computed(() => (getItemsList.value.length ? 20 : 0))
 
-const totalPrice = computed(() => subtotalPrice.value + SHIPPING_AND_TAXES)
+const totalPrice = computed(() => subtotalPrice.value + shippingAndTaxes.value)
 </script>
 
 <style lang="scss" scoped>

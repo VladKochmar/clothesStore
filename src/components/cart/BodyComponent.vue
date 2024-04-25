@@ -7,7 +7,15 @@
         {{ $t('buttons.clear') }}
       </button>
     </div>
-    <cart-item v-for="order in getItemsList" :key="order.id" :order="order" @update="updateData" />
+    <div v-if="getItemsList.length">
+      <cart-item
+        v-for="order in getItemsList"
+        :key="order.id"
+        :order="order"
+        @update="updateData"
+      />
+    </div>
+    <empty-list v-else />
   </div>
 </template>
 
@@ -15,6 +23,7 @@
 import { onMounted, toRefs } from 'vue'
 
 import CartItem from '@/components/cart/CartItem.vue'
+import EmptyList from '../CatalogComponents/catalog/components/EmptyList.vue'
 
 import { useAuthStore } from '@/stores/auth'
 const { getUser } = toRefs(useAuthStore())
