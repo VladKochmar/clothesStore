@@ -31,6 +31,7 @@ export const useAuthStore = defineStore('auth', () => {
           email,
           addresses: [],
           wishlist: [],
+          history: [],
           cart: []
         }
       })
@@ -71,6 +72,7 @@ export const useAuthStore = defineStore('auth', () => {
                 name: user?.value?.displayName,
                 addresses: [],
                 wishlist: [],
+                history: [],
                 cart: []
               }
             })

@@ -141,7 +141,14 @@
       "empty": "There is nothing"
     },
     "orders": {
-      "title": "My Orders"
+      "title": "My Orders",
+      "subtotal": "Subtotal",
+      "total": "Total",
+      "items": "items",
+      "for": "for",
+      "color": "Color:",
+      "size": "Size:",
+      "shipping": "Shipping & taxes"
     },
     "product": {
       "more-to-see": "There’s more to see",
