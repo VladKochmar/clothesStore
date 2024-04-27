@@ -30,4 +30,11 @@ const breadcrumps = [
 ]
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.documentation {
+  padding-top: 9.375rem;
+  @media (width < 819.98px) {
+    padding-top: 6.25rem;
+  }
+}
+</style>
