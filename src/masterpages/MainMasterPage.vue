@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <header-component />
-    <main>
+    <main class="main">
       <slot></slot>
     </main>
     <footer-component />
@@ -13,4 +13,11 @@ import HeaderComponent from '@/components/header/HeaderComponent.vue'
 import FooterComponent from '@/components/footer/FooterComponent.vue'
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.main {
+  padding-top: 9.375rem;
+  @media (width < 819.98px) {
+    padding-top: 6.25rem;
+  }
+}
+</style>

@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <header-component />
-    <div class="profile py-15">
+    <div class="profile">
       <div class="profile__container">
         <profile-sidebar />
         <main class="flex-1-1">
@@ -21,6 +21,10 @@ import ProfileSidebar from '@/components/ProfileSidebar.vue'
 
 <style lang="scss" scoped>
 .profile {
+  padding-top: 9.375rem;
+  @media (width < 819.98px) {
+    padding-top: 6.25rem;
+  }
   // .profile__container
   &__container {
     display: flex;
