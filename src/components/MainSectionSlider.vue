@@ -2,7 +2,6 @@
   <section class="pa-6">
     <swiper
       :spaceBetween="24"
-      :autoHeight="true"
       :pagination="{ clickable: true }"
       :autoplay="{
         delay: 2500,
@@ -28,7 +27,7 @@
                 }"
                 class="button button_black"
               >
-                {{ $t('buttons.cart') }}
+                {{ $t('buttons.visit-item') }}
               </router-link>
             </div>
           </div>
@@ -63,11 +62,6 @@
             <p class="main-swiper-slide__text mb-3 mb-md-12">
               {{ $t('pages.home.main-section.slide-three.text') }}
             </p>
-            <div class="d-inline-flex flex-column flex-sm-row ga-2 ga-md-3">
-              <router-link :to="{ name: 'home' }" class="button button_black">
-                {{ $t('buttons.cart') }}
-              </router-link>
-            </div>
           </div>
           <div class="main-swiper-slide__block-img">
             <img src="@/assets/img/home/main-section-slider/image03.png" />
@@ -84,8 +78,10 @@ import 'swiper/css'
 </script>
 
 <style lang="scss">
+@import '@/assets/scss/base/variables';
+
 .main-swiper-slide {
-  background-color: #dee0de;
+  background-color: $lavender;
   // .main-swiper-slide__container
   &__container {
     display: flex;
@@ -109,7 +105,7 @@ import 'swiper/css'
   }
   // .main-swiper-slide__text
   &__text {
-    color: #666;
+    color: $dimGray;
     @media (width < 992px) {
       font-size: 0.75rem;
     }

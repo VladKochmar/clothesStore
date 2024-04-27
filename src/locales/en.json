@@ -34,6 +34,7 @@
   },
   "buttons": {
     "cart": "Add to cart",
+    "visit-item": "Visit",
     "more": "Load more",
     "google": "Log In with Google",
     "log-out": "Log Out",
