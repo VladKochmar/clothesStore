@@ -9,13 +9,13 @@
     /></router-link>
     <div class="actions">
       <router-link :to="{ name: 'wishlist' }" class="actions__item">
-        <v-badge v-if="getCurrentUser.wishlist.length" :content="getCurrentUser.wishlist.length">
+        <v-badge v-if="getCurrentUser?.wishlist.length" :content="getCurrentUser?.wishlist.length">
           <v-icon icon="fa-regular fa-heart"></v-icon>
         </v-badge>
         <v-icon v-else icon="fa-regular fa-heart"></v-icon>
       </router-link>
       <router-link :to="{ name: 'cart' }" class="actions__item">
-        <v-badge v-if="getCurrentUser.cart.length" :content="getCurrentUser.cart.length">
+        <v-badge v-if="getCurrentUser?.cart.length" :content="getCurrentUser?.cart.length">
           <v-icon icon="fa-solid fa-cart-shopping"></v-icon>
         </v-badge>
         <v-icon v-else icon="fa-solid fa-cart-shopping"></v-icon>
