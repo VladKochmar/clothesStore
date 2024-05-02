@@ -51,7 +51,14 @@
             </router-link>
           </li>
           <li class="actions__item">
-            <registration-section />
+            <router-link v-if="getUser" :to="{ name: 'profile' }" id="user">
+              <img v-if="getUser.photoURL" :src="getUser.photoURL" class="user-img" />
+              <v-icon v-else icon="fa-solid fa-user"></v-icon>
+            </router-link>
+            <button v-else @click="isRegMenuOpen = true">
+              <v-icon icon="fa-solid fa-user"></v-icon>
+            </button>
+            <registration-section v-model="isRegMenuOpen" />
           </li>
           <li class="actions__item">
             <router-link :to="{ name: 'cart' }">
@@ -68,13 +75,16 @@
 </template>
 
 <script setup>
-import { toRefs } from 'vue'
+import { ref, toRefs } from 'vue'
 
 import SearchSection from './SearchSection.vue'
 import RegistrationSection from './registration/RegistrationSection.vue'
 
 import { useUsersStore } from '@/stores/users'
 const { getCurrentUser } = toRefs(useUsersStore())
+
+// reg menu
+const isRegMenuOpen = ref(false)
 </script>
 
 <style lang="scss" scoped>
