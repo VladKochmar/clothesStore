@@ -22,7 +22,6 @@ export const useAuthStore = defineStore('auth', () => {
       operation: () => authOperations.signUpWithWithEmailAndPassword({ email, password })
     }).then(async (res) => {
       user.value = res
-      console.log(user.value)
 
       await usersStore.addUserWithCustomId({
         id: user?.value?.uid,
@@ -35,6 +34,7 @@ export const useAuthStore = defineStore('auth', () => {
           cart: []
         }
       })
+      await usersStore.loadUserById(user?.value?.uid)
     })
   }
 

@@ -14,6 +14,7 @@
       <strong>{{ totalPrice.toFixed(2) }}€</strong>
     </div>
     <button
+      id="checkout"
       @click="addOrderToHistory"
       :disabled="!getItemsList?.length"
       class="button button_black w-100"

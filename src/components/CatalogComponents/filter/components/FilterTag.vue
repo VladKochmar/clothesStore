@@ -3,7 +3,7 @@
     <slot>
       {{ label }}
     </slot>
-    <button @click="$emit('clear')">
+    <button @click="$emit('clear')" class="xmark">
       <v-icon icon="fa-solid fa-xmark" class="fz-small"></v-icon>
     </button>
   </div>

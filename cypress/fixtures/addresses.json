@@ -1,0 +1,14 @@
+{
+  "firstAddress": {
+    "country": "p{enter}",
+    "city": "Wroclaw",
+    "address": "Kazimierza Pulaskiego 16/U1A",
+    "postcode": "50-444"
+  },
+  "secondAddress": {
+    "country": "e{enter}",
+    "city": "London",
+    "address": "1-11 John Adam St",
+    "postcode": "WC2N6HT"
+  }
+}

@@ -27,7 +27,7 @@
       :label="$t('fields.post-code')"
       variant="outlined"
     ></v-text-field>
-    <button class="button button_black w-100" @click="onAction">
+    <button id="save-btn" class="button button_black w-100" @click="onAction">
       {{ $t('pages.addresses.save') }}
     </button>
   </div>

@@ -6,6 +6,7 @@
       </h1>
       <p class="text-center mb-11">{{ $t('pages.about.main-section.text') }}</p>
       <v-btn
+        id="scroll-btn"
         icon="fa-solid fa-chevron-down"
         variant="outlined"
         size="small"

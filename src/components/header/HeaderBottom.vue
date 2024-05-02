@@ -42,8 +42,8 @@
           <li class="actions__item">
             <router-link :to="{ name: 'wishlist' }">
               <v-badge
-                v-if="getCurrentUser?.wishlist.length"
-                :content="getCurrentUser?.wishlist.length"
+                v-if="getCurrentUser?.wishlist?.length"
+                :content="getCurrentUser?.wishlist?.length"
               >
                 <v-icon icon="fa-regular fa-heart"></v-icon>
               </v-badge>
@@ -55,7 +55,7 @@
           </li>
           <li class="actions__item">
             <router-link :to="{ name: 'cart' }">
-              <v-badge v-if="getCurrentUser?.cart.length" :content="getCurrentUser?.cart.length">
+              <v-badge v-if="getCurrentUser?.cart?.length" :content="getCurrentUser?.cart?.length">
                 <v-icon icon="fa-solid fa-cart-shopping"></v-icon>
               </v-badge>
               <v-icon v-else icon="fa-solid fa-cart-shopping"></v-icon>

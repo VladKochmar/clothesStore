@@ -10,14 +10,21 @@
       <strong class="text-body-2 font-weight-bold d-block mb-3">Price (€)</strong>
       <div class="d-flex align-center ga-3">
         <v-text-field
+          id="min"
           v-model="minPrice"
           label="From"
           variant="outlined"
           class="input"
         ></v-text-field>
-        <v-text-field v-model="maxPrice" label="To" variant="outlined" class="input"></v-text-field>
+        <v-text-field
+          id="max"
+          v-model="maxPrice"
+          label="To"
+          variant="outlined"
+          class="input"
+        ></v-text-field>
       </div>
-      <button class="button button_black w-100" @click="applyFilter">Save</button>
+      <button id="save" class="button button_black w-100" @click="applyFilter">Save</button>
     </v-card>
   </v-menu>
 </template>

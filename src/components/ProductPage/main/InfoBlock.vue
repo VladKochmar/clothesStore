@@ -8,7 +8,12 @@
     <payment-images />
     <sizes-list @select="onSelectSize($event)" />
     <div class="d-flex gc-3 mb-3">
-      <button @click="addToCart" :disabled="!currentSize" class="button button_black w-100">
+      <button
+        id="add"
+        @click="addToCart"
+        :disabled="!currentSize"
+        class="button button_black w-100"
+      >
         {{ $t('buttons.cart') }} {{ currentPrice }}
       </button>
       <button class="heart-button" @click="onClick(productId)">
@@ -68,7 +73,7 @@ const { getCurrentUser } = toRefs(usersStore)
 const snackbar = ref(false)
 
 // Checking if the product is favorite
-const isFavorite = computed(() => getCurrentUser.value?.wishlist.includes(productId))
+const isFavorite = computed(() => getCurrentUser.value?.wishlist?.includes(productId))
 const heartIconName = computed(() => (isFavorite.value ? 'fa-solid fa-heart' : 'far fa-heart'))
 
 // Select or deselect product
@@ -95,21 +100,25 @@ import { useOrdersStore } from '@/stores/orders'
 const { addItemWithCustomId } = useOrdersStore()
 
 function addToCart() {
-  const orderId = uuidv4()
+  if (getUser.value) {
+    const orderId = uuidv4()
 
-  const orderData = {
-    productId: productId,
-    title: getCurrentItem.value.title,
-    price: currentPrice.value,
-    size: currentSize.value,
-    color: getCurrentItem.value.color,
-    imgSrc: getCurrentItem.value.imgSrc,
-    totalPrice: currentPrice.value,
-    quantity: 1
+    const orderData = {
+      productId: productId,
+      title: getCurrentItem.value.title,
+      price: currentPrice.value,
+      size: currentSize.value,
+      color: getCurrentItem.value.color,
+      imgSrc: getCurrentItem.value.imgSrc,
+      totalPrice: currentPrice.value,
+      quantity: 1
+    }
+
+    addItemWithCustomId({ id: orderId, data: orderData })
+    addItemToArray(getUser.value?.uid, 'cart', orderId)
+  } else {
+    snackbar.value = true
   }
-
-  addItemWithCustomId({ id: orderId, data: orderData })
-  addItemToArray(getUser.value?.uid, 'cart', orderId)
 }
 </script>
 

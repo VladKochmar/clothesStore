@@ -3,7 +3,7 @@
     <h1 class="main-title mb-8">{{ $t('pages.cart.cart-title') }}</h1>
     <div class="d-flex justify-space-between mb-4">
       <span>{{ getCurrentUser.cart.length }} {{ $t('pages.cart.items') }}</span>
-      <button @click="clearAll">
+      <button id="clear-all" @click="clearAll">
         {{ $t('buttons.clear') }}
       </button>
     </div>

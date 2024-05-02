@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link v-if="getUser" :to="{ name: 'profile' }">
+    <router-link v-if="getUser" :to="{ name: 'profile' }" id="user">
       <img v-if="getUser.photoURL" :src="getUser.photoURL" class="user-img" />
       <v-icon v-else icon="fa-solid fa-user"></v-icon>
     </router-link>
@@ -9,7 +9,7 @@
       <v-btn
         variant="text"
         icon="fa-solid fa-xmark"
-        class="align-self-end mb-2"
+        class="close-btn align-self-end mb-2"
         @click="onClick"
       ></v-btn>
       <tabs-component />

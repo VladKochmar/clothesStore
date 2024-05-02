@@ -3,19 +3,21 @@
     <div class="details">
       <h1 class="title mb-10">{{ $t('profile-sidebar.details') }}</h1>
       <v-text-field
+        id="userName"
         v-model="userData.name"
         :label="$t('fields.name')"
         variant="outlined"
         class="mb-3 w-100"
       ></v-text-field>
       <v-text-field
+        id="phone"
         v-model="userData.phone"
         :label="$t('fields.phone')"
         variant="outlined"
         class="mb-3 w-100"
       ></v-text-field>
       <div class="mb-6">{{ $t('fields.email') }}: {{ userData?.email }}</div>
-      <button class="button button_black w-100" @click="update">
+      <button id="save-btn" class="button button_black w-100" @click="update">
         {{ $t('buttons.save') }}
       </button>
       <template>

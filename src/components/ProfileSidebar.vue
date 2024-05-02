@@ -18,7 +18,7 @@
           </router-link>
         </li>
         <li>
-          <button @click="signOut">{{ $t('buttons.log-out') }}</button>
+          <button id="logOut" @click="signOut">{{ $t('buttons.log-out') }}</button>
         </li>
       </ul>
     </nav>

@@ -15,7 +15,7 @@
           v-for="address in getCurrentUser?.addresses"
           :key="address.id"
           :address-data="address"
-          :user-data="{ id: getUser.uid, name: getCurrentUser.name, phone: getCurrentUser?.phone }"
+          :user-data="{ id: getUser?.uid, name: getCurrentUser.name, phone: getCurrentUser?.phone }"
         />
       </template>
       <p v-else>{{ $t('pages.addresses.empty') }}</p>

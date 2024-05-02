@@ -11,15 +11,15 @@
     <div class="actions d-inline-flex align-start gc-6">
       <v-dialog v-model="dialog" max-width="450">
         <template v-slot:activator="{ props: activatorProps }">
-          <button v-bind="activatorProps">{{ $t('pages.addresses.edit') }}</button>
+          <button id="edit-btn" v-bind="activatorProps">{{ $t('pages.addresses.edit') }}</button>
         </template>
         <address-editor
-          :user-id="getUser.uid"
+          :user-id="getUser?.uid"
           :address-id="addressData.id"
           @close="onClose($event)"
         />
       </v-dialog>
-      <button @click="removeItemFromArray(userData.id, 'addresses', addressData)">
+      <button id="delete-btn" @click="removeItemFromArray(userData?.id, 'addresses', addressData)">
         {{ $t('pages.addresses.delete') }}
       </button>
     </div>

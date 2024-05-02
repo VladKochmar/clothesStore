@@ -1,12 +1,12 @@
 <template>
   <div class="quantity">
-    <button class="quantity__button" @click="onClick('-')">
+    <button class="quantity__button minus" @click="onClick('-')">
       <v-icon icon="fa-solid fa-minus" />
     </button>
     <div class="quantity__input">
       <input v-model="model" @change="onChange" autocomplete="off" type="text" />
     </div>
-    <button class="quantity__button" @click="onClick('+')">
+    <button class="quantity__button plus" @click="onClick('+')">
       <v-icon icon="fa-solid fa-plus" />
     </button>
   </div>
