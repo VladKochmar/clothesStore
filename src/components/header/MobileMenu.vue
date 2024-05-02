@@ -6,7 +6,13 @@
     <nav class="mobile-menu">
       <div class="d-inline-flex align-center ga-3">
         <lang-switcher />
-        <registration-section />
+        <router-link v-if="getUser" :to="{ name: 'profile' }" id="user">
+          <img v-if="getUser.photoURL" :src="getUser.photoURL" class="user-img" />
+          <v-icon v-else icon="fa-solid fa-user"></v-icon>
+        </router-link>
+        <button v-else @click="isRegMenuOpen = true">
+          <v-icon icon="fa-solid fa-user"></v-icon>
+        </button>
       </div>
       <ul class="mobile-menu__list">
         <li class="mobile-menu__item">
@@ -39,19 +45,27 @@
       </a>
     </nav>
   </div>
+  <registration-section v-model="isRegMenuOpen" />
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, toRefs } from 'vue'
 import LangSwitcher from './LangSwitcher.vue'
 import RegistrationSection from './registration/RegistrationSection.vue'
 
 const isMenuOpen = ref(false)
 
 function onClick() {
-  isMenuOpen.value = isMenuOpen.value ? false : true
+  isMenuOpen.value = !isMenuOpen.value
   document.body.classList.toggle('lock')
 }
+
+// Get auth data
+import { useAuthStore } from '@/stores/auth'
+const { getUser } = toRefs(useAuthStore())
+
+// reg menu
+const isRegMenuOpen = ref(false)
 </script>
 
 <style lang="scss" scoped>

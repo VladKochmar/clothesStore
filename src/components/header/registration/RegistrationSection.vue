@@ -1,38 +1,43 @@
 <template>
-  <div>
-    <router-link v-if="getUser" :to="{ name: 'profile' }" id="user">
-      <img v-if="getUser.photoURL" :src="getUser.photoURL" class="user-img" />
-      <v-icon v-else icon="fa-solid fa-user"></v-icon>
-    </router-link>
-    <button v-else @click="onClick"><v-icon icon="fa-solid fa-user"></v-icon></button>
-    <aside class="register-sidebar d-flex flex-column align-center" :class="{ open: isOpened }">
-      <v-btn
-        variant="text"
-        icon="fa-solid fa-xmark"
-        class="close-btn align-self-end mb-2"
-        @click="onClick"
-      ></v-btn>
-      <tabs-component />
-    </aside>
-  </div>
+  <aside
+    ref="registerSidebar"
+    class="register-sidebar d-flex flex-column align-center"
+    :class="{ open: model }"
+  >
+    <v-btn
+      variant="text"
+      icon="fa-solid fa-xmark"
+      class="close-btn align-self-end mb-2"
+      @click="onClick"
+    ></v-btn>
+    <tabs-component />
+  </aside>
 </template>
 
 <script setup>
-import { ref, toRefs } from 'vue'
-
+import { ref } from 'vue'
 import TabsComponent from './components/TabsComponent.vue'
 
-// Get auth data
-import { useAuthStore } from '@/stores/auth'
-const { getUser } = toRefs(useAuthStore())
-
 // Sidebar functions
-const isOpened = ref(false)
+const model = defineModel()
 
 function onClick() {
-  isOpened.value = !isOpened.value
-  document.body.classList.toggle('lock')
+  model.value = !model.value
 }
+
+// 100vh fix
+const registerSidebar = ref(null)
+
+let vh = window.innerHeight * 0.01
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`)
+
+// We listen to the resize event
+window.addEventListener('resize', () => {
+  // We execute the same script as before
+  let vh = window.innerHeight * 0.01
+  registerSidebar.value.style.setProperty('--vh', `${vh}px`)
+})
 </script>
 
 <style lang="scss" scoped>
@@ -41,7 +46,9 @@ function onClick() {
   top: 0;
   right: 0;
   z-index: 20;
-  height: 100%;
+  overflow: auto;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   background-color: #fff;
   padding: 2.5rem;

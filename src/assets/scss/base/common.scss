@@ -122,3 +122,8 @@
 .no-wrap-text {
   white-space: nowrap;
 }
+
+.v-window,
+.v-slide-group {
+  overflow: visible !important;
+}
