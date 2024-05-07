@@ -2,7 +2,7 @@
   <div class="images-section">
     <div class="images-section__item">
       <img
-        src="https://images.pexels.com/photos/2029867/pexels-photo-2029867.jpeg?auto=compress&cs=tinysrgb&w=800"
+        src="https://images.pexels.com/photos/769749/pexels-photo-769749.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       />
       <div class="images-section__content">
         <h2
@@ -19,7 +19,7 @@
     </div>
     <div class="images-section__item">
       <img
-        src="https://images.pexels.com/photos/769749/pexels-photo-769749.jpeg?auto=compress&cs=tinysrgb&w=800"
+        src="https://images.pexels.com/photos/2033975/pexels-photo-2033975.jpeg?auto=compress&cs=tinysrgb&w=800"
       />
       <div class="images-section__content">
         <h2

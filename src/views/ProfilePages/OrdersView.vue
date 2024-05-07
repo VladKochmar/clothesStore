@@ -1,8 +1,8 @@
 <template>
   <profile-master-page>
-    <div>
+    <div class="pb-10">
       <h1 class="title mb-10">{{ $t('pages.orders.title') }}</h1>
-      <v-expansion-panels variant="accordion">
+      <v-expansion-panels v-if="getCurrentUser?.history?.length" variant="accordion">
         <v-expansion-panel v-for="order in getCurrentUser.history" :key="order.id">
           <v-expansion-panel-title class="order d-flex align-center gc-4 gc-sm-6">
             <div class="order__info">
@@ -71,6 +71,12 @@
           </v-expansion-panel-text>
         </v-expansion-panel>
       </v-expansion-panels>
+      <empty-list v-else>
+        <h2 class="title-s text-center mb-8 mw-460">{{ $t('pages.orders.empty') }}</h2>
+        <router-link :to="{ name: 'catalog' }" class="button button_black mb-12">{{
+          $t('buttons.go-to-catalog')
+        }}</router-link>
+      </empty-list>
     </div>
   </profile-master-page>
 </template>
@@ -82,11 +88,16 @@ import ProfileMasterPage from '@/masterpages/ProfileMasterPage.vue'
 
 // Getting User data
 import { useUsersStore } from '@/stores/users'
+import EmptyList from '@/components/CatalogComponents/catalog/components/EmptyList.vue'
 const { getCurrentUser } = toRefs(useUsersStore())
 </script>
 
 <style lang="scss" scoped>
 @import '../../assets/scss/base/variables';
+
+.mw-460 {
+  max-width: 28.75rem;
+}
 
 .order {
   font-size: 0.875rem;

@@ -6,10 +6,10 @@
   </v-tabs>
   <v-window v-model="tab" class="tabs-body px-3">
     <v-window-item :value="1">
-      <item-tab />
+      <item-tab @close="$emit('close')" />
     </v-window-item>
     <v-window-item :value="2">
-      <item-tab :is-sign-up="true" />
+      <item-tab :is-sign-up="true" @close="$emit('close')" />
     </v-window-item>
   </v-window>
 </template>

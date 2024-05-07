@@ -5,7 +5,7 @@
       <button class="accordion__icon" :class="{ open: isOpen }"></button>
     </div>
     <div ref="dropdown" class="accordion__dropdown">
-      <div class="pt-6">{{ accordionData.text[$i18n.locale] }}</div>
+      <div ref="content" class="pt-6">{{ accordionData.text[$i18n.locale] }}</div>
     </div>
   </div>
 </template>
@@ -21,27 +21,58 @@ defineProps({
 })
 
 const dropdown = ref(null)
+const content = ref(null)
 const isOpen = ref(false)
-
-let dropdownHeight
+const dropdownHeight = ref(0)
 
 onMounted(() => {
-  dropdownHeight = dropdown.value.offsetHeight
-  dropdown.value.style.height = 0
+  updateDropdownHeight()
 })
 
 function onClick() {
   isOpen.value = !isOpen.value
 
   if (isOpen.value) {
-    dropdown.value.style.height = `${dropdownHeight}px`
+    dropdown.value.classList.remove('accordion__dropdown')
+    dropdown.value.classList.add('opening')
+
+    dropdownHeight.value = content.value.offsetHeight
+    dropdown.value.style.height = `${dropdownHeight.value}px`
+
+    setTimeout(() => {
+      dropdown.value.classList.remove('opening')
+      dropdown.value.style.height = ''
+
+      dropdown.value.classList.add('accordion__dropdown')
+      dropdown.value.classList.add('open')
+    }, 300)
   } else {
+    dropdown.value.style.height = `${dropdownHeight.value}px`
+    dropdown.value.classList.remove('open')
+    dropdown.value.classList.remove('accordion__dropdown')
+    setTimeout(() => {
+      dropdown.value.classList.add('opening')
+      dropdown.value.style.height = 0
+    }, 0)
+
+    setTimeout(() => {
+      dropdown.value.classList.remove('opening')
+      dropdown.value.classList.add('accordion__dropdown')
+    }, 300)
+  }
+}
+
+function updateDropdownHeight() {
+  dropdownHeight.value = content.value.offsetHeight
+  if (!isOpen.value) {
     dropdown.value.style.height = 0
+  } else {
+    dropdown.value.style.height = `${dropdownHeight.value}px`
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '@/assets/scss/base/variables';
 
 .accordion {
@@ -86,10 +117,16 @@ function onClick() {
       }
     }
   }
+  .opening {
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.35s ease;
+  }
   // .accordion__dropdown
   &__dropdown {
-    overflow: hidden;
-    transition: 0.5s;
+    &:not(.open) {
+      display: none;
+    }
   }
 }
 </style>

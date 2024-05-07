@@ -53,6 +53,9 @@
           <li class="actions__item">
             <router-link v-if="getUser" :to="{ name: 'profile' }" id="user">
               <img v-if="getUser.photoURL" :src="getUser.photoURL" class="user-img" />
+              <div v-else-if="getCurrentUser?.name" class="log-user-icon">
+                {{ getCurrentUser?.name[0] }}
+              </div>
               <v-icon v-else icon="fa-solid fa-user"></v-icon>
             </router-link>
             <button v-else @click="isRegMenuOpen = true">
@@ -85,6 +88,10 @@ const { getCurrentUser } = toRefs(useUsersStore())
 
 // reg menu
 const isRegMenuOpen = ref(false)
+
+// Get auth data
+import { useAuthStore } from '@/stores/auth'
+const { getUser } = toRefs(useAuthStore())
 </script>
 
 <style lang="scss" scoped>

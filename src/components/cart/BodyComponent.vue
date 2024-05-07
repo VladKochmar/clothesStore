@@ -15,7 +15,12 @@
         @update="updateData"
       />
     </div>
-    <empty-list v-else />
+    <empty-list class="pt-4" v-else>
+      <h2 class="title-s text-center mb-8">{{ $t('pages.orders.empty') }}</h2>
+      <router-link :to="{ name: 'catalog' }" class="button button_black mb-12">{{
+        $t('buttons.go-to-catalog')
+      }}</router-link>
+    </empty-list>
   </div>
 </template>
 

@@ -24,10 +24,9 @@
         <div class="text-center ma-2">
           <v-snackbar v-model="snackbar">
             {{ $t('snackbar.success') }}
-
             <template v-slot:actions>
               <v-btn color="pink" variant="text" @click="snackbar = false">
-                {{ $t('buttons.close') }}
+                <v-icon icon="fa-solid fa-xmark" />
               </v-btn>
             </template>
           </v-snackbar>

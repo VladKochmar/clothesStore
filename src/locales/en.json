@@ -45,7 +45,8 @@
     "subscribe": "Subscribe",
     "clear": "Clear all",
     "remove": "Remove",
-    "checkout": "Go to Checkout"
+    "checkout": "Go to Checkout",
+    "go-to-catalog": "Go to the catalog"
   },
   "snackbar": {
     "success": "Your data has been updated",
@@ -93,7 +94,7 @@
         "text": "Explore Our Mission"
       },
       "inspire": {
-        "title": "You inspire us and we want to inspire you too",
+        "title": "You inspire us, and we want to inspire you",
         "text1": "Every step of the way, we feel a burning desire to share, teach, and learn. Everything we do is inspired by you - our beloved communities.",
         "text2": "Our mission is to find beauty in every little thing and make the incredible ordinary. This inspires you to find new ways and discover the brightest colors of life.",
         "text3": "We believe in the power of joint creativity. Every project, every idea is the result of our joint work and your uniqueness. Together we create magic.",
@@ -113,7 +114,14 @@
         "title": "Sweatshirts",
         "text": "You will always be in fashion with our large selection of sweatshirts."
       },
-      "empty": "Unfortunately, we could not find any offers"
+      "empty": "Unfortunately, we could not find any offers",
+      "filters": "Filters",
+      "color": "Color",
+      "size": "Size",
+      "price": "Price",
+      "save": "Save",
+      "from": "From",
+      "to": "To"
     },
     "not-found": {
       "title": "Oops!",
@@ -150,7 +158,8 @@
       "for": "for",
       "color": "Color:",
       "size": "Size:",
-      "shipping": "Shipping & taxes"
+      "shipping": "Shipping & taxes",
+      "empty": "It is currently empty, but you can place your first order"
     },
     "product": {
       "more-to-see": "There’s more to see",

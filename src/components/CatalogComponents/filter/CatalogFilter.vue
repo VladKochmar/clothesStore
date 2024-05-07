@@ -2,17 +2,17 @@
   <div>
     <div class="d-flex align-center justify-space-between ga-8 py-7 border-bottom">
       <button @click="onMenuClick" class="activator-btn filters-btn" :class="{ active: isOpened }">
-        Filters <v-icon icon="fa-solid fa-chevron-down" />
+        {{ $t('pages.catalog.filters') }} <v-icon icon="fa-solid fa-chevron-down" />
       </button>
       <div class="filters-container" :class="{ active: isOpened }">
         <filter-menu
-          label="Color"
+          :label="$t('pages.catalog.color')"
           :options="colors"
           :current-option="filterData.color"
           @update="updateFilter('color', $event)"
         />
         <filter-menu
-          label="Size"
+          :label="$t('pages.catalog.size')"
           :options="sizes"
           :current-option="filterData.size"
           @update="updateFilter('size', $event)"
@@ -44,7 +44,7 @@
           <span :style="{ backgroundColor: filterData.color }" class="color-block"></span>
         </filter-tag>
       </div>
-      <button class="clear-btn" @click="clearAll">Clear all</button>
+      <button class="clear-btn" @click="clearAll">{{ $t('buttons.clear') }}</button>
     </div>
   </div>
 </template>

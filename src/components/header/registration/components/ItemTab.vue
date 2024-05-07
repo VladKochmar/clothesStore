@@ -40,8 +40,8 @@
       <v-btn
         prepend-icon="fa-brands fa-google"
         size="large"
-        class="w-100"
-        @click="loginWithGoogleAccount"
+        class="google-btn w-100"
+        @click="googleAuth"
       >
         {{ $t('buttons.google') }}
       </v-btn>
@@ -83,15 +83,36 @@ const isDataValid = computed(() => loginData.email && loginData.password)
 const show1 = ref(false)
 
 // Auth functions
+const emit = defineEmits(['close'])
 
 import { useAuthStore } from '@/stores/auth'
 const { signUpWithWithEmailAndPassword, signInWithWithEmailAndPassword, loginWithGoogleAccount } =
   useAuthStore()
 
-const authAction = props.isSignUp ? signUpWithWithEmailAndPassword : signInWithWithEmailAndPassword
+async function googleAuth() {
+  await loginWithGoogleAccount()
+  emit('close')
+}
+
+async function authAction(data) {
+  props.isSignUp
+    ? await signUpWithWithEmailAndPassword(data)
+    : await signInWithWithEmailAndPassword(data)
+  emit('close')
+}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.google-btn {
+  @media (width < 419.98px) {
+    font-size: 12px !important;
+  }
+  & > .v-btn__prepend {
+    @media (width < 379.98px) {
+      display: none !important;
+    }
+  }
+}
 .line-between {
   display: flex;
   gap: 0 0.625rem;

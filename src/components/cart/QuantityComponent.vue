@@ -26,7 +26,7 @@ const model = defineModel()
 const prevNumber = ref(model.value)
 
 function onChange() {
-  if (model.value < 1 || model.value > props.maxQuantity) {
+  if (!Number.isInteger(model.value) || model.value < 1 || model.value > props.maxQuantity) {
     model.value = prevNumber.value
   }
 }

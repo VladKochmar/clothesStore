@@ -19,7 +19,9 @@
         {{ $t('snackbar.login') }}
 
         <template v-slot:actions>
-          <v-btn color="pink" variant="text" @click="snackbar = false"> Close </v-btn>
+          <v-btn color="pink" variant="text" @click="snackbar = false">
+            <v-icon icon="fa-solid fa-xmark" />
+          </v-btn>
         </template>
       </v-snackbar>
       <div v-if="hasLabel" class="product-card__label">{{ productData.label }}</div>

@@ -57,8 +57,8 @@ const totalPrice = computed(
   () => (parseFloat(props.order.price) * currentQuantity.value).toFixed(2) + '€'
 )
 
-watch(currentQuantity, () => {
-  updateItem(props.order.id, {
+watch(currentQuantity, async () => {
+  await updateItem(props.order.id, {
     ...props.order,
     totalPrice: totalPrice.value,
     quantity: currentQuantity.value

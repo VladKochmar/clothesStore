@@ -127,3 +127,21 @@
 .v-slide-group {
   overflow: visible !important;
 }
+
+.user-img {
+  max-width: 1.5rem;
+  border-radius: 50%;
+}
+
+.log-user-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #33691e;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: $white;
+  font-size: 0.75rem;
+}
